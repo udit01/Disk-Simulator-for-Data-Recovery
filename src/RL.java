@@ -9,9 +9,9 @@ public interface RL {
 
     // State parameters
     int lambda = 0; // History Factor
-    int sigma = 1;  // Usage Factor
+    int sigma = 0;  // Usage Factor
     int rho = 0;    // Spatial Factor
-    int mu = 1;     // Linking Factor
+    int mu = 0;     // Linking Factor
 
     // State parameter bounds
     int lower = 0;
@@ -38,5 +38,5 @@ public interface RL {
     int a = 0;
     double lookAheadValue = 0.0;
     double sample = 0.0;
-    
+
 }
