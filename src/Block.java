@@ -16,7 +16,7 @@ public interface Block {
     int pf = 0;
 
     // Pointer to file
-    File parentFile;
+    //File parentFile = new File();
 
     // File number of this block (0 when unused)
     int filenumber = 0;

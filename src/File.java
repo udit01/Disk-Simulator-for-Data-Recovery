@@ -6,4 +6,7 @@ public interface File {
     // Block list
     List<Block> block = new ArrayList<>();
 
+    // Init
+    void File();
+
 }
