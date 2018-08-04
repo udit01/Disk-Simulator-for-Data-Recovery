@@ -4,6 +4,11 @@ public interface RL {
     double gamma = 0.75; // Look-ahead weight
     double alpha = 0.20; // Forgetfulness weight
 
+    // RL convergence parameters
+    int readDelay = 10;
+    double explorationMinutes = 1;
+    double explorationConst = (explorationMinutes*60.0)/((readDelay)/1000.0);
+
     // Exponential decay factor
     double epsilon = 1.0;
 
@@ -24,6 +29,9 @@ public interface RL {
     // Q state-action table
     double Q[][] = new double[num_states][num_actions];
 
+    // Initialize Q
+    void intializeQ();
+
     // State index
     int s = 0;
     int sPrime = 0;
@@ -38,5 +46,23 @@ public interface RL {
     int a = 0;
     double lookAheadValue = 0.0;
     double sample = 0.0;
+
+    // Get action
+    int getAction();
+
+    // Set just next state
+    void setsPrime(int action);
+
+    // Set Physical State
+    void setPhysicalState();
+
+    // Analyze performance
+    float getDeltaPerformance();
+
+    // Get Lookahead value
+    float getLookAhead();
+
+    // Main loop
+    void Main();
 
 }
