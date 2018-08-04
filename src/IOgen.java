@@ -12,4 +12,7 @@ public interface IOgen {
     // Operation iteration counter
     int OIC = 0;
 
+    // Generate IO op
+    int op();
+
 }

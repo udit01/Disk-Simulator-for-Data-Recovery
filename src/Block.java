@@ -15,16 +15,16 @@ public interface Block {
     // Priority Score
     int pf = 0;
 
-    // Update Priority Score
-    void updatepf();
-
-    // List of blocks that belong to the same file
-    List<Block> fileBlocks = new ArrayList<>();
+    // Pointer to file
+    File parentFile;
 
     // File number of this block (0 when unused)
     int filenumber = 0;
 
     // IO time
     int IO_time = 0;
+
+    // Update Priority Score
+    void updatepf(int lambda, int sigma, int rho, int mu);
 
 }
