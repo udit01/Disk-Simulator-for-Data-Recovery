@@ -24,4 +24,7 @@ public interface Block {
     // File number of this block (0 when unused)
     int filenumber = 0;
 
+    // IO time
+    int IO_time = 0;
+
 }
