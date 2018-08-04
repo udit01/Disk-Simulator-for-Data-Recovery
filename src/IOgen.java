@@ -1,4 +1,4 @@
-public class IOgen {
+public interface IOgen {
 
     // Operation type
     int op = 0; // 0 - No op, 1 - create, 2 - read/write, 3 - delete
@@ -10,6 +10,6 @@ public class IOgen {
     int fileIndex = 0;
 
     // Operation iteration counter
-    int OIC;
+    int OIC = 0;
 
 }
