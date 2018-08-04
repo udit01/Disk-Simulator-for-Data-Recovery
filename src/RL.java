@@ -62,6 +62,9 @@ public interface RL {
     // Get Lookahead value
     float getLookAhead();
 
+    // Model Iteration counter
+    int MIC = 0;
+
     // Main loop
     void Main();
 
