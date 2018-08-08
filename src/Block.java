@@ -41,11 +41,11 @@ public class Block {
     void allocate(File pf, int link_factor){
         assert this.used == false;
 
+        this.parentFile.deleteBlock(this);
         this.parentFile = pf;
         this.used = true;
         this.hf = 1;//reset
         this.uf = 1;//reset
-
         this.lf = link_factor;//binaries or non binaries
     }
 
@@ -53,7 +53,7 @@ public class Block {
     void deallocate(){
         assert this.used == true;
 
-        this.parentFile = null;
+        //let the parent pointer remain
         this.hf = 0;
         this.used = false;
 
