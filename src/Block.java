@@ -23,6 +23,8 @@ public class Block {
     // Priority Score
     int pf ;
 
+    int i, j;
+
     // Pointer to file
     File parentFile ;
 
@@ -35,6 +37,9 @@ public class Block {
         this.used = false;
         this.pf = 0;
         this.parentFile = null ;
+
+//        this.i = i_;
+//        this.j = j_;
     }
 
     //allocate this block to a file (UNUSED TO USED TRANSITION)
