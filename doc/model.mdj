@@ -1,7 +1,7 @@
 {
 	"_type": "Project",
 	"_id": "AAAAAAFF+h6SjaM2Hec=",
-	"name": "Untitled",
+	"name": "Disk Simulator for Data recovery",
 	"ownedElements": [
 		{
 			"_type": "UMLModel",
@@ -5061,46 +5061,6 @@
 				},
 				{
 					"_type": "UMLClass",
-					"_id": "AAAAAAFlHylcqM92IBI=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Class2"
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFlHymFXs+fxWc=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Class3"
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFlHymWQc/IsFQ=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Class4"
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFlHymXHc/x9aY=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Class5"
-				},
-				{
-					"_type": "UMLClass",
-					"_id": "AAAAAAFlHymzx9AcN4E=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Class6"
-				},
-				{
-					"_type": "UMLClass",
 					"_id": "AAAAAAFlHzjtjNFrHEM=",
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
@@ -6015,14 +5975,6 @@
 				},
 				{
 					"_type": "UMLClass",
-					"_id": "AAAAAAFlH4YhBdRFEak=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Main"
-				},
-				{
-					"_type": "UMLClass",
 					"_id": "AAAAAAFlH6kaotUbS6w=",
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
@@ -6076,5 +6028,8 @@
 				}
 			]
 		}
-	]
+	],
+	"author": "Shreshth Tuli",
+	"company": "IIT Delhi",
+	"version": "v 1.0"
 }
