@@ -1344,8 +1344,8 @@
 								"$ref": "AAAAAAFF+qBtyKM79qY="
 							},
 							"font": "Arial;13;0",
-							"left": 536,
-							"top": 840,
+							"left": 528,
+							"top": 824,
 							"width": 105,
 							"height": 25,
 							"text": "Increases HF"
@@ -1363,7 +1363,7 @@
 							"tail": {
 								"$ref": "AAAAAAFlHzjtjNFt5p8="
 							},
-							"points": "588:806;588:840"
+							"points": "520:736;504:736;504:840;528:840"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -5294,6 +5294,7 @@
 							}
 						}
 					],
+					"documentation": "update the coefficients of the memory",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
