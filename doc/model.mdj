@@ -1645,11 +1645,47 @@
 									"model": {
 										"$ref": "AAAAAAFlH4VumtPv2bI="
 									},
+									"subViews": [
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFlH5p8htSfV68=",
+											"_parent": {
+												"$ref": "AAAAAAFlH4Vum9P3Bw4="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH5p8T9Sc2hg="
+											},
+											"font": "Arial;13;0",
+											"left": 509,
+											"top": 110,
+											"width": 271,
+											"height": 13,
+											"text": "+ArrayList[int] fileIndices",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFlH6FX5dS3osk=",
+											"_parent": {
+												"$ref": "AAAAAAFlH4Vum9P3Bw4="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH6FXutS0770="
+											},
+											"font": "Arial;13;0",
+											"left": 509,
+											"top": 125,
+											"width": 271,
+											"height": 13,
+											"text": "+bool stable",
+											"horizontalAlignment": 0
+										}
+									],
 									"font": "Arial;13;0",
 									"left": 504,
 									"top": 105,
 									"width": 281,
-									"height": 10
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1660,11 +1696,30 @@
 									"model": {
 										"$ref": "AAAAAAFlH4VumtPv2bI="
 									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH5u8f9Sm8Io=",
+											"_parent": {
+												"$ref": "AAAAAAFlH4Vum9P4op0="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH5u8UNSjN/k="
+											},
+											"font": "Arial;13;0",
+											"left": 509,
+											"top": 148,
+											"width": 271,
+											"height": 13,
+											"text": "+generateIO(int memutil)",
+											"horizontalAlignment": 0
+										}
+									],
 									"font": "Arial;13;0",
 									"left": 504,
-									"top": 115,
+									"top": 143,
 									"width": 281,
-									"height": 10
+									"height": 23
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1882,6 +1937,19 @@
 							"templateParameterCompartment": {
 								"$ref": "AAAAAAFlH4YJ09Qmd1s="
 							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFlH4fwgtSHOiA=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 72,
+							"top": 24,
+							"width": 177,
+							"height": 142,
+							"text": "Disk Simulator for Data Recovery: Authors - Shreshth Tuli, Udit Jain, Shikhar Tuli"
 						}
 					]
 				},
@@ -2486,7 +2554,7 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "updateHeap",
-							"documentation": "Updates the priority scores of all blocks in memory.\nCalls the updateSF() function.\nCalls theupdatepf() function for all blocks in memory.\nPercolate all heap nodes for unused blocks in the heap based on their priority scores.\nUpdate memutil = num of blocks used / (width*height)"
+							"documentation": "Updates the priority scores of all blocks in memory.\nCalls the updateSF() function.\nCalls the updatepf() function for all blocks in memory.\nPercolate all heap nodes for unused blocks in the heap based on their priority scores.\nUpdate memutil = num of blocks used / (width*height)"
 						}
 					]
 				},
@@ -2533,7 +2601,7 @@
 								"$ref": "AAAAAAFlH3zYNdNyRRE="
 							},
 							"name": "performance",
-							"documentation": "Calculate RR and SLM of the given memory\n- Initialize rr and slm to 0\n- Iterate through all files of the memory\n- For used files : slm += file.slm()\n- For unused files : rr += file.rr()\n- performance is defined as : rr/num_unused - slm/num_used\n- return performance",
+							"documentation": "Calculate RR and SLM of the given memory\n- Initialize rr and slm to 0\n- Iterate through all files of the memory\n- For used files : slm += file.slm()\n- For unused files : rr += file.rr()\n- performance is defined as : rr/num_unused - weight*slm/num_used\n- return performance",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -2553,7 +2621,48 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "ioGenerator"
+					"name": "ioGenerator",
+					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFlH5p8T9Sc2hg=",
+							"_parent": {
+								"$ref": "AAAAAAFlH4VumtPv2bI="
+							},
+							"name": "ArrayList[int] fileIndices",
+							"documentation": "List of used files' indices in the memory"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFlH6FXutS0770=",
+							"_parent": {
+								"$ref": "AAAAAAFlH4VumtPv2bI="
+							},
+							"name": "bool stable"
+						}
+					],
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH5u8UNSjN/k=",
+							"_parent": {
+								"$ref": "AAAAAAFlH4VumtPv2bI="
+							},
+							"name": "generateIO",
+							"documentation": "Generate a random operation based on the memory utilization parameters\n- Randomly choose from create, delete and read/write\n- The operation / transaction chosen should obey that the memutil is a probabilistic distribution from 80 to 90 %. Not create when 90, no delete when 80.\n- For create, choose randomly lf 0 or 10 with probability 0.2 and 0.8. Store returned file index in fileIndices.\n- For delete randomly choose from the fileIndices. Assert that the file is in used state. remove this index from fileIndices.\n- For read/write, choose randomly from the fileIndices.\n- If memory utilization is stabilized to range 80 to 90 then set stable to true\n- Return the action",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlH53MqdSuteg=",
+									"_parent": {
+										"$ref": "AAAAAAFlH5u8UNSjN/k="
+									},
+									"name": "int memutil",
+									"type": ""
+								}
+							]
+						}
+					]
 				},
 				{
 					"_type": "UMLClass",
