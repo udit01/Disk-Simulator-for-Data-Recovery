@@ -48,7 +48,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -480,
+											"left": -416,
 											"top": -368,
 											"height": 13
 										},
@@ -59,7 +59,7 @@
 												"$ref": "AAAAAAFlHylV4M9Qqc0="
 											},
 											"font": "Arial;13;1",
-											"left": 125,
+											"left": 157,
 											"top": 391,
 											"width": 261.22509765625,
 											"height": 13,
@@ -73,7 +73,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -480,
+											"left": -416,
 											"top": -368,
 											"width": 73.67724609375,
 											"height": 13,
@@ -87,14 +87,14 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -480,
+											"left": -416,
 											"top": -368,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 120,
+									"left": 152,
 									"top": 384,
 									"width": 271.22509765625,
 									"height": 25,
@@ -131,7 +131,7 @@
 												"$ref": "AAAAAAFlHyonYNDC70Y="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 414,
 											"width": 261.22509765625,
 											"height": 13,
@@ -148,7 +148,7 @@
 												"$ref": "AAAAAAFlHypdFdDJ/p4="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 429,
 											"width": 261.22509765625,
 											"height": 13,
@@ -165,7 +165,7 @@
 												"$ref": "AAAAAAFlHyqPTNDQyw0="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 444,
 											"width": 261.22509765625,
 											"height": 13,
@@ -182,7 +182,7 @@
 												"$ref": "AAAAAAFlHyqnyNDX2kc="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 459,
 											"width": 261.22509765625,
 											"height": 13,
@@ -199,7 +199,7 @@
 												"$ref": "AAAAAAFlHysH0NDigBM="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 474,
 											"width": 261.22509765625,
 											"height": 13,
@@ -216,7 +216,7 @@
 												"$ref": "AAAAAAFlHys1YNDpE9Y="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 489,
 											"width": 261.22509765625,
 											"height": 13,
@@ -233,7 +233,7 @@
 												"$ref": "AAAAAAFlHyt5AND0FZY="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 504,
 											"width": 261.22509765625,
 											"height": 13,
@@ -250,7 +250,7 @@
 												"$ref": "AAAAAAFlHyu36tD7mUE="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 519,
 											"width": 261.22509765625,
 											"height": 13,
@@ -267,7 +267,7 @@
 												"$ref": "AAAAAAFlHyvhINECtA8="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 534,
 											"width": 261.22509765625,
 											"height": 13,
@@ -276,7 +276,7 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 120,
+									"left": 152,
 									"top": 409,
 									"width": 271.22509765625,
 									"height": 143
@@ -301,7 +301,7 @@
 												"$ref": "AAAAAAFlHyyMbtEPUaY="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 557,
 											"width": 261.22509765625,
 											"height": 13,
@@ -318,7 +318,7 @@
 												"$ref": "AAAAAAFlHzDEYdEe3lI="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 572,
 											"width": 261.22509765625,
 											"height": 13,
@@ -335,7 +335,7 @@
 												"$ref": "AAAAAAFlHzE6aNEqP0k="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 587,
 											"width": 261.22509765625,
 											"height": 13,
@@ -352,11 +352,11 @@
 												"$ref": "AAAAAAFlHzHcStE1ssM="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 602,
 											"width": 261.22509765625,
 											"height": 13,
-											"text": "+deleteBlock()",
+											"text": "+setUnused()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -369,7 +369,7 @@
 												"$ref": "AAAAAAFlHzPCK9FDwxg="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 617,
 											"width": 261.22509765625,
 											"height": 13,
@@ -386,11 +386,28 @@
 												"$ref": "AAAAAAFlHzSB5dFLrF0="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
+											"left": 157,
 											"top": 632,
 											"width": 261.22509765625,
 											"height": 13,
 											"text": "+increaseUF()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH28YCdNLEoo=",
+											"_parent": {
+												"$ref": "AAAAAAFlHylV4c9WNJ0="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH28X8tNIsvY="
+											},
+											"font": "Arial;13;0",
+											"left": 157,
+											"top": 647,
+											"width": 261.22509765625,
+											"height": 13,
+											"text": "+setSF(int value)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -403,8 +420,8 @@
 												"$ref": "AAAAAAFlHzWnMtFTelU="
 											},
 											"font": "Arial;13;0",
-											"left": 125,
-											"top": 647,
+											"left": 157,
+											"top": 662,
 											"width": 261.22509765625,
 											"height": 13,
 											"text": "+updatepf(int labda, int sigma, int rho, int mu)",
@@ -412,10 +429,10 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 120,
+									"left": 152,
 									"top": 552,
 									"width": 271.22509765625,
-									"height": 113
+									"height": 128
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -428,8 +445,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -240,
-									"top": -184,
+									"left": -208,
+									"top": -168,
 									"width": 10,
 									"height": 10
 								},
@@ -444,18 +461,18 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -240,
-									"top": -184,
+									"left": -208,
+									"top": -168,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 120,
+							"left": 152,
 							"top": 384,
 							"width": 271.22509765625,
-							"height": 281,
+							"height": 296,
 							"nameCompartment": {
 								"$ref": "AAAAAAFlHylV4M9Qqc0="
 							},
@@ -623,13 +640,30 @@
 											"height": 13,
 											"text": "+int linking_factor",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFlH0nxPdI7BIc=",
+											"_parent": {
+												"$ref": "AAAAAAFlHzjtjdFzcB0="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH0nxD9I4mhM="
+											},
+											"font": "Arial;13;0",
+											"left": 133,
+											"top": 147,
+											"width": 239,
+											"height": 13,
+											"text": "+int size",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 128,
 									"top": 97,
 									"width": 249,
-									"height": 53
+									"height": 68
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -652,7 +686,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 155,
+											"top": 170,
 											"width": 239,
 											"height": 13,
 											"text": "+createFile(blockList, lf)",
@@ -669,7 +703,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 170,
+											"top": 185,
 											"width": 239,
 											"height": 13,
 											"text": "+deleteFile()",
@@ -686,18 +720,35 @@
 											},
 											"font": "Arial;13;0",
 											"left": 133,
-											"top": 185,
+											"top": 200,
 											"width": 239,
 											"height": 13,
 											"text": "+deleteBlock(Block b)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH2SqL9MrA9s=",
+											"_parent": {
+												"$ref": "AAAAAAFlHzjtjdF0PxQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH2SqDtMo6XM="
+											},
+											"font": "Arial;13;0",
+											"left": 133,
+											"top": 215,
+											"width": 239,
+											"height": 13,
+											"text": "+readWriteFile()",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 128,
-									"top": 150,
+									"top": 165,
 									"width": 249,
-									"height": 53
+									"height": 68
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -905,13 +956,64 @@
 											"height": 13,
 											"text": "+Block[][] blocks",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFlH0elxtIoQNM=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Hnwbg="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH0elodIlR+4="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 307,
+											"width": 271,
+											"height": 13,
+											"text": "+Heap[Block] unused",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFlH04+0tJlWK0=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Hnwbg="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH04+rtJiyEA="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 322,
+											"width": 271,
+											"height": 13,
+											"text": "+ArrayList[Block] used",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAFlH0rswdJGvjw=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Hnwbg="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH0rsm9JDBOY="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 337,
+											"width": 271,
+											"height": 13,
+											"text": "+ArrayList[File] fileList",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 672,
 									"top": 257,
 									"width": 281,
-									"height": 53
+									"height": 98
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -922,11 +1024,115 @@
 									"model": {
 										"$ref": "AAAAAAFlH0UbOtHfacw="
 									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH0uT69JPOhQ=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Ho3HQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH0uTxtJMl8U="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 360,
+											"width": 271,
+											"height": 13,
+											"text": "+Memory(int w, int h)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH09R29Jv//g=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Ho3HQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH09Ru9JsdRs="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 375,
+											"width": 271,
+											"height": 13,
+											"text": "+CreateFile(int linking_factor, int num_blocks)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH2J8bNMW2C4=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Ho3HQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH2J8QdMTu78="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 390,
+											"width": 271,
+											"height": 13,
+											"text": "+DeleteFile(int fileIndex)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH2OjqNMgo9s=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Ho3HQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH2OjfNMdZTE="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 405,
+											"width": 271,
+											"height": 13,
+											"text": "+ReadWriteFile(int fileIndex)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH2wS6NM2oTM=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Ho3HQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH2wSutMz5eA="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 420,
+											"width": 271,
+											"height": 13,
+											"text": "+updateSF()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlH2zIXdM+fPA=",
+											"_parent": {
+												"$ref": "AAAAAAFlH0UbO9Ho3HQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFlH2zIOtM7d38="
+											},
+											"font": "Arial;13;0",
+											"left": 677,
+											"top": 435,
+											"width": 271,
+											"height": 13,
+											"text": "+updateHeap()",
+											"horizontalAlignment": 0
+										}
+									],
 									"font": "Arial;13;0",
 									"left": 672,
-									"top": 310,
+									"top": 355,
 									"width": 281,
-									"height": 10
+									"height": 98
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -982,6 +1188,74 @@
 							"templateParameterCompartment": {
 								"$ref": "AAAAAAFlH0UbO9HqOsw="
 							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFlH0yc0dJSvII=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 344,
+							"top": 224,
+							"width": 60,
+							"height": 15
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFlH1s8Y9KHu0M=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 8,
+							"top": 192,
+							"width": 105,
+							"height": 25,
+							"text": "Increases HF"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFlH1wJYNL1RfU=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFlH1s8Y9KHu0M="
+							},
+							"tail": {
+								"$ref": "AAAAAAFlHzjtjNFt5p8="
+							},
+							"points": "128:208;112:208"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFlH14LI9L+gqk=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 8,
+							"top": 576,
+							"width": 121,
+							"height": 38,
+							"text": "reset HF, SF, LF (Unused to used)"
+						},
+						{
+							"_type": "UMLNoteLinkView",
+							"_id": "AAAAAAFlH166EtMNfho=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAFlH14LI9L+gqk="
+							},
+							"tail": {
+								"$ref": "AAAAAAFlHylV4M9Pq88="
+							},
+							"points": "152:594;128:594"
 						}
 					]
 				},
@@ -1140,7 +1414,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "deleteBlock",
+							"name": "setUnused",
 							"documentation": "Assert that block is used\nset hf to 0 and used to false"
 						},
 						{
@@ -1160,6 +1434,26 @@
 							},
 							"name": "increaseUF",
 							"documentation": "Assert that block is used\nIncrease UF by 1"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH28X8tNIsvY=",
+							"_parent": {
+								"$ref": "AAAAAAFlHylV389NjCs="
+							},
+							"name": "setSF",
+							"documentation": "sets sf of the block to the input value",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlH283vtNQWG0=",
+									"_parent": {
+										"$ref": "AAAAAAFlH28X8tNIsvY="
+									},
+									"name": "int value",
+									"type": ""
+								}
+							]
 						},
 						{
 							"_type": "UMLOperation",
@@ -1284,6 +1578,14 @@
 							},
 							"name": "int linking_factor",
 							"documentation": "0 to 10\nShould be same for all blocks allocated to this file\n\n"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFlH0nxD9I4mhM=",
+							"_parent": {
+								"$ref": "AAAAAAFlHzjtjNFrHEM="
+							},
+							"name": "int size"
 						}
 					],
 					"operations": [
@@ -1294,7 +1596,7 @@
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
 							"name": "createFile",
-							"documentation": "Constructor for file\nCalled when file created.\nUses the blockList passed as its blocklist and sets lf as input\n",
+							"documentation": "Constructor for file\nCalled when file created.\nUses the blockList passed as its blocklist and sets lf as input\nSets file size as size of blockList argument\n- Assert that the blocklist blocks are unused \n- Iterate through all blocks and if they parentFile pointer null then allocate otherwise deleteBlock from their parentFile and then allocate to this file\n\n\n",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -1321,7 +1623,7 @@
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
 							"name": "deleteFile",
-							"documentation": "Delete file operation\nCall deleteBlock() to all in blockList\n(Does not deallocate parentFile pointer of these blocks)\n"
+							"documentation": "Delete file operation\nCall setUnused() to all in blockList\n(Does not deallocate parentFile pointer of these blocks)\n"
 						},
 						{
 							"_type": "UMLOperation",
@@ -1342,6 +1644,15 @@
 									"type": ""
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH2SqDtMo6XM=",
+							"_parent": {
+								"$ref": "AAAAAAFlHzjtjNFrHEM="
+							},
+							"name": "readWriteFile",
+							"documentation": "Increase UF of all blocks in the file by 1\n"
 						}
 					]
 				},
@@ -1379,6 +1690,151 @@
 							},
 							"name": "Block[][] blocks",
 							"documentation": "The main 2d block array of memory"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFlH0elodIlR+4=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "Heap[Block] unused",
+							"documentation": "Heap of blocks that are unused prioritized by their pf (min heap)\n\nNote : only contain pointers to blocks"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFlH04+rtJiyEA=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "ArrayList[Block] used"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAFlH0rsm9JDBOY=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "ArrayList[File] fileList",
+							"documentation": "List of all files, used, deleted or obsolete\n"
+						}
+					],
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH0uTxtJMl8U=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "Memory",
+							"documentation": "Constructor of memory\nSets memory width and height\nInitializes all blocks in memory\nSets their i and j\nInitializes fileList, used and unused attributes\n",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlH02M2NJddNo=",
+									"_parent": {
+										"$ref": "AAAAAAFlH0uTxtJMl8U="
+									},
+									"name": "int w",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlH02M2NJe9vg=",
+									"_parent": {
+										"$ref": "AAAAAAFlH0uTxtJMl8U="
+									},
+									"name": "int h",
+									"type": ""
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH09Ru9JsdRs=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "CreateFile",
+							"documentation": "Creates new file with the given linking factor and of the given size.\n- Form blocklist of the given size with num_blocks number of max priority score blocks from unused heap (check for memory full)\n-  Add these blocks to used blocks\n- Add this file to fileList\n- Call createFile function of the file with blocklist and linking factor\n- Call updateHeap()\n- return file index to IO gen",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlH1ALM9J0cls=",
+									"_parent": {
+										"$ref": "AAAAAAFlH09Ru9JsdRs="
+									},
+									"name": "int linking_factor",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlH1ALM9J1swE=",
+									"_parent": {
+										"$ref": "AAAAAAFlH09Ru9JsdRs="
+									},
+									"name": "int num_blocks",
+									"documentation": "Creates a new file with given linking factor and allocates the number of blocks as input.\n- Forms a blockList with the popping num_blocks number of max priority score blocks from unused heap. (check memory full)\n- Uses createFile constructor to allocate these blocks to form a new file with input linking factor.\n- Adds this file to the fileList \n- Return index of this file for the IO gen\n",
+									"type": ""
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH2J8QdMTu78=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "DeleteFile",
+							"documentation": "Deletes the file corresponding to the fileIndex.\nAsserts that the file is used.\nCall the deleteFile() method of the file and insert the blocks of the file in the unused heap. Delete these blocks from the used list.\nCall updateHeap()",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlH2KkC9MaKgw=",
+									"_parent": {
+										"$ref": "AAAAAAFlH2J8QdMTu78="
+									},
+									"name": "int fileIndex",
+									"type": ""
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH2OjfNMdZTE=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "ReadWriteFile",
+							"documentation": "Read/Write operation for the file corresponding to the index provided\n\nAsserts that the file is used.\n\nCall updateHeap()",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlH2PPXNMktq8=",
+									"_parent": {
+										"$ref": "AAAAAAFlH2OjfNMdZTE="
+									},
+									"name": "int fileIndex",
+									"type": ""
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH2wSutMz5eA=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "updateSF",
+							"documentation": "Updates Spatial Factors of all blocks by taking an average of the pf of the neighbouring blocks by calling the setSF() method"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlH2zIOtM7d38=",
+							"_parent": {
+								"$ref": "AAAAAAFlH0UbOtHfacw="
+							},
+							"name": "updateHeap",
+							"documentation": "Updates the priority scores of all blocks in memory.\nCalls the updateSF() function.\nCalls theupdatepf() function for all blocks in memory.\nPercolate all heap nodes for unused blocks in the heap based on their priority scores."
 						}
 					]
 				}
