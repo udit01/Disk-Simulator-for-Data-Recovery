@@ -757,7 +757,7 @@
 											"top": 774,
 											"width": 263,
 											"height": 13,
-											"text": "+rr()",
+											"text": "+getRecoveryRatio()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -774,7 +774,7 @@
 											"top": 789,
 											"width": 263,
 											"height": 13,
-											"text": "+slm()",
+											"text": "+getSLM()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4828,7 +4828,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "int hf"
+							"name": "int hf",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4836,7 +4837,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "int uf"
+							"name": "int uf",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4844,7 +4846,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "int sf"
+							"name": "int sf",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4852,7 +4855,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "int lf"
+							"name": "int lf",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4860,7 +4864,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "bool used"
+							"name": "bool used",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4868,7 +4873,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "int pf"
+							"name": "int pf",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4876,7 +4882,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "int i"
+							"name": "int i",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4884,7 +4891,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
-							"name": "int j"
+							"name": "int j",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4893,7 +4901,8 @@
 								"$ref": "AAAAAAFlHylV389NjCs="
 							},
 							"name": "File parentFile",
-							"documentation": "File which the block belongs to at any time instant\n"
+							"documentation": "File which the block belongs to at any time instant\n",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -4951,7 +4960,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFlHzE6aNEqP0k="
 									},
-									"name": "File f"
+									"name": "File f",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -4959,7 +4969,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFlHzE6aNEqP0k="
 									},
-									"name": "int linking_factor"
+									"name": "int linking_factor",
+									"type": ""
 								}
 							]
 						},
@@ -5103,7 +5114,8 @@
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
 							"name": "HashSet[Block] blockList",
-							"documentation": "Set of blocks allocated to the file\nNote that the blocks set is complete when the file is in use, partial when deleted and overwritten by another file, empty when obsolete\n\nOnly blocks allocated to this file\n"
+							"documentation": "Set of blocks allocated to the file\nNote that the blocks set is complete when the file is in use, partial when deleted and overwritten by another file, empty when obsolete\n\nOnly blocks allocated to this file\n",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5112,7 +5124,8 @@
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
 							"name": "States [used; deleted; obsolete]",
-							"documentation": "Three states of file:\n- Used: The file is in memory currently\n- Deleted: The file is deleted and blocks can be overwritten / allocated to otgher files\n- Obsolete: No blocks allocated to this file and thus this file can be ignored\n"
+							"documentation": "Three states of file:\n- Used: The file is in memory currently\n- Deleted: The file is deleted and blocks can be overwritten / allocated to other files\n- Obsolete: No blocks allocated to this file and thus this file can be ignored\n",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5121,7 +5134,8 @@
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
 							"name": "int linking_factor",
-							"documentation": "0 to 10\nShould be same for all blocks allocated to this file\n\n"
+							"documentation": "0 to 10\nShould be same for all blocks allocated to this file\n\n",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5129,7 +5143,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
-							"name": "int size"
+							"name": "int size",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -5140,7 +5155,7 @@
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
 							"name": "createFile",
-							"documentation": "Constructor for file\nCalled when file created.\nUses the blockList passed as its blocklist and sets lf as input\nSets file size as size of blockList argument\n- Assert that the blocklist blocks are unused \n- Iterate through all blocks and if they parentFile pointer null then allocate otherwise deleteBlock from their parentFile and then allocate to this file\n\n\n",
+							"documentation": "Constructor for file\nCalled when file created.\nUses the blockList passed as its blocklist and sets lf as input\nSets file size as size of blockList argument\n- Assert that the blocklist blocks are unused \n- Iterate through all blocks and if their parentFile pointer null then allocate otherwise deleteBlock from their parentFile and then allocate to this file\n\n\n",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -5148,7 +5163,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFlHzkuZdGcrUA="
 									},
-									"name": "blockList"
+									"name": "blockList",
+									"type": ""
 								},
 								{
 									"_type": "UMLParameter",
@@ -5156,7 +5172,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFlHzkuZdGcrUA="
 									},
-									"name": "lf"
+									"name": "lf",
+									"type": ""
 								}
 							]
 						},
@@ -5204,8 +5221,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
-							"name": "rr",
-							"documentation": "Assert that file is unused state\nCalculate rr of files as current size of blockList fo file / original size of file for linking factor 0.\nFor linking factor 10, 0 if size(blockList) < original size, and 1 otherwise.\nreurn rr\n"
+							"name": "getRecoveryRatio",
+							"documentation": "Assert that file is unused state\nCalculate rr of files as current size of blockList of file / original size of file for linking factor 0.\nFor linking factor 10, 0 if size(blockList) < original size, and 1 otherwise.\nreurn rr\n"
 						},
 						{
 							"_type": "UMLOperation",
@@ -5213,7 +5230,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
-							"name": "slm",
+							"name": "getSLM",
 							"documentation": "Assert that file is used\nReturns the rms deviation of all blocks of the file in terms of their i, j locations.\nreturn slm"
 						}
 					]
@@ -5263,7 +5280,8 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "int width",
-							"documentation": "Width of memory in terms of number of blocks"
+							"documentation": "Width of memory in terms of number of blocks",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5272,7 +5290,8 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "int height",
-							"documentation": "Height of memory in terms of number of blocks"
+							"documentation": "Height of memory in terms of number of blocks",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5281,7 +5300,8 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "Block[][] blocks",
-							"documentation": "The main 2d block array of memory"
+							"documentation": "The main 2d block array of memory",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5290,7 +5310,8 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "Heap[Block] unused",
-							"documentation": "Heap of blocks that are unused prioritized by their pf (min heap)\n\nNote : only contain pointers to blocks"
+							"documentation": "Heap of blocks that are unused prioritized by their pf (min heap)\n\nNote : only contain pointers to blocks",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5298,7 +5319,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
-							"name": "ArrayList[Block] used"
+							"name": "ArrayList[Block] used",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5307,7 +5329,8 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "ArrayList[File] fileList",
-							"documentation": "List of all files, used, deleted or obsolete\n"
+							"documentation": "List of all files, used, deleted or obsolete\n",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5315,7 +5338,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
-							"name": "int memutil"
+							"name": "int memutil",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5323,7 +5347,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
-							"name": "int lambda"
+							"name": "int lambda",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5331,7 +5356,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
-							"name": "int sigma"
+							"name": "int sigma",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5339,7 +5365,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
-							"name": "int rho"
+							"name": "int rho",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5347,7 +5374,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
-							"name": "int mu"
+							"name": "int mu",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -5561,7 +5589,8 @@
 								"$ref": "AAAAAAFlH3zYNdNyRRE="
 							},
 							"name": "int rr",
-							"documentation": "Recovery ratio of all files\n"
+							"documentation": "Recovery ratio of all files\n",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5570,7 +5599,8 @@
 								"$ref": "AAAAAAFlH3zYNdNyRRE="
 							},
 							"name": "int slm",
-							"documentation": "SLM of all files\n"
+							"documentation": "SLM of all files\n",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5578,7 +5608,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH3zYNdNyRRE="
 							},
-							"name": "float performance"
+							"name": "float performance",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -5597,7 +5628,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFlH35N2tO+vAk="
 									},
-									"name": "Memory mem"
+									"name": "Memory mem",
+									"type": ""
 								}
 							]
 						}
@@ -5647,7 +5679,8 @@
 								"$ref": "AAAAAAFlH4VumtPv2bI="
 							},
 							"name": "ArrayList[int] fileIndices",
-							"documentation": "List of used files' indices in the memory"
+							"documentation": "List of used files' indices in the memory",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5655,7 +5688,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4VumtPv2bI="
 							},
-							"name": "bool stable"
+							"name": "bool stable",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5663,7 +5697,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4VumtPv2bI="
 							},
-							"name": "Action [create; delete; readWrite]"
+							"name": "Action [create; delete; readWrite]",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -5732,7 +5767,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int num_params"
+							"name": "int num_params",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5740,7 +5776,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int range"
+							"name": "int range",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5748,7 +5785,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int state[num_params]"
+							"name": "int state[num_params]",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5756,7 +5794,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int num_states"
+							"name": "int num_states",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5764,7 +5803,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int num_actions"
+							"name": "int num_actions",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5772,7 +5812,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float Q[num_states][num_actions]"
+							"name": "float Q[num_states][num_actions]",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5780,7 +5821,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float gamma_q"
+							"name": "float gamma_q",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5788,7 +5830,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float alpha"
+							"name": "float alpha",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5796,7 +5839,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float epsilon"
+							"name": "float epsilon",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5804,7 +5848,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int s"
+							"name": "int s",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5812,7 +5857,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int sPrime"
+							"name": "int sPrime",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5820,7 +5866,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float distanceNew"
+							"name": "float distanceNew",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5828,7 +5875,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "flaot distanceOld"
+							"name": "flaot distanceOld",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5836,7 +5884,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float deltaDistance"
+							"name": "float deltaDistance",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5844,7 +5893,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float r"
+							"name": "float r",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5852,7 +5902,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float lookAheadValue"
+							"name": "float lookAheadValue",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5860,7 +5911,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int a"
+							"name": "int a",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5868,7 +5920,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int readDelay"
+							"name": "int readDelay",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5876,7 +5929,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float explorationMinutes"
+							"name": "float explorationMinutes",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5884,7 +5938,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "float explorationConst"
+							"name": "float explorationConst",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5892,7 +5947,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH4YJ0tQb89M="
 							},
-							"name": "int t"
+							"name": "int t",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -5987,7 +6043,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH6kaotUbS6w="
 							},
-							"name": "int MIN"
+							"name": "int MIN",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5995,7 +6052,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH6kaotUbS6w="
 							},
-							"name": "int OIN"
+							"name": "int OIN",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -6003,7 +6061,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH6kaotUbS6w="
 							},
-							"name": "int action"
+							"name": "int action",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -6011,7 +6070,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH6kaotUbS6w="
 							},
-							"name": "int oinLimit"
+							"name": "int oinLimit",
+							"type": ""
 						}
 					],
 					"operations": [
