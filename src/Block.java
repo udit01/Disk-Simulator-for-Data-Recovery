@@ -38,6 +38,7 @@ public class Block {
         this.pf = 0;
         this.parentFile = null ;
 
+        //we'll change mannually i, j after init
 //        this.i = i_;
 //        this.j = j_;
     }
@@ -46,6 +47,7 @@ public class Block {
     void allocate(File pf, int link_factor){
         assert this.used == false;
 
+        //delte the block from parent file
         this.parentFile.deleteBlock(this);
         this.parentFile = pf;
         this.used = true;
@@ -55,7 +57,8 @@ public class Block {
     }
 
     //allocate this block to a file (USED TO UNUSED TRANSITION)
-    void deallocate(){
+    // Set unused
+    void setUnused(){
         assert this.used == true;
 
         //let the parent pointer remain
@@ -76,27 +79,24 @@ public class Block {
         this.uf = Math.min(MAX_FACTORS, this.uf + 1);
     }
 
+    void setSF(int val){
+        this.sf = Math.min(Math.max(val, MIN_FACTORS), MAX_FACTORS);
+    }
 
     // Update Priority Score
     void updatepf(int lambda, int sigma, int rho, int mu){
 
         //ranges of l, sig, rho , mu
         //ranges of pf check
-        assert lambda <= MAX_PARAM && lambda >= MIN_PARAM ;
-        assert sigma  <= MAX_PARAM && sigma  >= MIN_PARAM ;
-        assert rho    <= MAX_PARAM && rho    >= MIN_PARAM ;
-        assert mu     <= MAX_PARAM && mu     >= MIN_PARAM ;
+        assert (lambda <= MAX_PARAM) && (lambda >= MIN_PARAM );
+        assert (sigma  <= MAX_PARAM) && (sigma  >= MIN_PARAM );
+        assert (rho    <= MAX_PARAM) && (rho    >= MIN_PARAM );
+        assert (mu     <= MAX_PARAM) && (mu     >= MIN_PARAM );
 
         int temp = lambda*this.hf - sigma*this.uf + rho*this.sf + mu*this.lf ;
-        if (temp > MAX_PF){
-            this.pf = MAX_PF;
-        }
-        else if (temp < MIN_PF){
-            this.pf = MIN_PF;
-        }
-        else{
-            this.pf = temp;
-        }
+
+        this.pf = Math.min(Math.max(temp, MIN_PF), MAX_PF);
+
     }
 
 }
