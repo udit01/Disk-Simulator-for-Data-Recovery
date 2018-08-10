@@ -44,12 +44,12 @@ public class Block {
     }
 
     //allocate this block to a file (UNUSED TO USED TRANSITION)
-    void allocate(File pf, int link_factor){
+    void allocate(File parent_file, int link_factor){
         assert this.used == false;
 
         //delte the block from parent file
         this.parentFile.deleteBlock(this);
-        this.parentFile = pf;
+        this.parentFile = parent_file;
         this.used = true;
         this.hf = 1;//reset
         this.uf = 1;//reset

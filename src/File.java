@@ -5,19 +5,51 @@ import java.util.List;
 
 public class File {
 
+    public
+
+    static int lf_max = 10;
+    static int lf_min = 0;
+
+    //doesn't change after file's initial allocation
+    int original_size;
+
     // Block list
     HashSet<Block> blockList ;//= new ArrayList<>();
 
-    enum STATE{ USED, DELETED, OBSOLETE;}
+
+    enum STATE{
+        USED,  //Currently allocated blocks
+        DELETED, // File deleted and blocks can be overwritten
+        OBSOLETE; // No blocks allocated, file ignored
+    }
     STATE fileState;
 
+    //only 0 or 10
     int linking_factor;
 
 
+
+
     File(HashSet<Block> block_list, int lf){
+
+        for (Block b: block_list){
+            assert (b.used == false);
+            if (b.parentFile == null){
+                b.allocate(this, lf);
+            }
+            else{
+                b.parentFile.deleteBlock(b);
+                b.allocate(this, lf);
+            }
+        }
+
         this.blockList = block_list;
         this.fileState = STATE.USED;
         this.linking_factor = lf;
+
+        //not changed
+        this.original_size = block_list.size();
+
     }
 
     void deleteFile(){
@@ -25,7 +57,8 @@ public class File {
         //deallocate file
         for (Block b : this.blockList){
             //deallocate not delete because, deleteBlock if final delete
-            b.deallocate();
+            // doesn't change parent file pointer of this block
+            b.setUnused();
         }
     }
 
@@ -35,10 +68,42 @@ public class File {
 
         this.blockList.remove(b);
 
+        for (Block block: this.blockList){
+            block.increaseHF();
+        }
+
         if (this.blockList.size() == 0){
             this.fileState = STATE.OBSOLETE;
         }
     }
 
+    void readWriteFile(){
+        for (Block block: this.blockList){
+            block.increaseUF();
+        }
+    }
 
+    double getRecoveryRatio(){
+        assert fileState == STATE.DELETED;
+
+        //current size
+        int cs = this.blockList.size();
+
+        double rr = 0;
+        switch (linking_factor){
+            case 0: rr = (double)(cs)/((double)(this.original_size));
+            case 10: rr = (cs < this.original_size) ? 0: 1 ;
+        }
+
+        return  rr;
+    }
+
+    double  getSlm(){
+        //
+        assert this.fileState == STATE.USED;
+
+        //Return the RMS deviations of all blocks in 2D
+        
+        return (0.0);
+    }
 }
