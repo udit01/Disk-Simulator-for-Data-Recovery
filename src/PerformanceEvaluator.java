@@ -25,7 +25,7 @@ public class PerformanceEvaluator {
 
         for(File f : memory.fileList){
             if(f.fileState == File.STATE.USED){
-                slm += f.getSLM();
+                slm += f.getSlm();
                 num_current_files++;
             }
             else if(f.fileState == File.STATE.DELETED){

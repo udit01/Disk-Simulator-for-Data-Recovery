@@ -11,7 +11,7 @@ public class IOgen {
 
     // Random op integer
     int op; // 0 - no op, 1 - create, 2 - read/write, 3 - delete
-    int rand;
+    Random rand;
 
     // File size for create op, and linking factor
     int numBlocks = 0;
@@ -35,8 +35,7 @@ public class IOgen {
     // New IO Generator
     IOgen(){
         fileIndices = new ArrayList<>();
-        stable = false;
-        rand = new Random<>();
+        rand = new Random();
         op = 0;
     }
 
@@ -74,14 +73,14 @@ public class IOgen {
 
         OIC++;
 
-        int range = (mem_util < MIN_UTIL) ? 3: 4;
+        int range = (memory.mem_util < MIN_UTIL) ? 3: 4;
         int op = rand.nextInt(range);
 
-        while(!validAction(op, mem_util)){
+        while(!validAction(op, memory.mem_util)){
             op = rand.nextInt(range);
         }
 
-        ACTION a;
+        ACTION a = ACTION.NO_OP;
 
         switch (op){
             case 0 :
@@ -102,7 +101,7 @@ public class IOgen {
                 this.fileIndices.remove(fileIndex);
         }
 
-        return ACTION;
+        return a;
     }
 
 }
