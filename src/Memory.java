@@ -21,7 +21,7 @@ public class Memory {
     Block[][] blocks;
 
     // Block heap
-    PriorityQueue<Block> unsedBlocks;
+    PriorityQueue<Block>.unusedBlocks;
 
     HashSet<Block> usedBlocks;
 //    PriorityQueue<Block> usedBlocks;
@@ -53,11 +53,11 @@ public class Memory {
         //put all blocks in unused heap now
         this.usedBlocks = new HashSet<>(w*h);
 
-        this.unsedBlocks = new PriorityQueue<>(w*h, new BlockComparator());
+        this.unusedBlocks = new PriorityQueue<>(w*h, new BlockComparator());
 //        for ()
         for (int i = 0; i < w; i++){
             for(int j = 0; j < h; j++){
-                this.unsedBlocks.add(this.blocks[i][j]);
+                this.unusedBlocks.add(this.blocks[i][j]);
             }
         }
     }
@@ -67,7 +67,7 @@ public class Memory {
         HashSet<Block> block_list = new HashSet<>(num_blocks);
 
         for(int i = 0; i < num_blocks; i++){
-            Block b = this.unsedBlocks.poll();
+            Block b = this.unusedBlocks.poll();
 
             if(b == null){
                 throw new java.lang.RuntimeException("Memory Full!");
@@ -105,7 +105,7 @@ public class Memory {
         cf.deleteFile();
         for(Block b : cf.blockList){
             this.usedBlocks.remove(b);
-            this.unsedBlocks.add(b);
+            this.unusedBlocks.add(b);
         }
         this.refresh();
     }
@@ -177,7 +177,7 @@ public class Memory {
             }
         }
 
-        this.unsedBlocks = newHeap;
+        this.unusedBlocks = newHeap;
 
         this.mem_util = ((double)(this.usedBlocks.size()))/(this.width*this.height);
 
@@ -202,8 +202,6 @@ public class Memory {
 //    }
 
     // Memory Usage percentage
-//    int memUsage(){
-//
-//    }
-
-}
+    double memUsage(){
+        return mem_util;
+    }

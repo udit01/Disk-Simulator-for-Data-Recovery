@@ -1829,6 +1829,23 @@
 									"subViews": [
 										{
 											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlKBB25FXcZJM=",
+											"_parent": {
+												"$ref": "AAAAAAFlH4Vum9P4op0="
+											},
+											"model": {
+												"$ref": "AAAAAAFlKBB2hFXZBuM="
+											},
+											"font": "Arial;13;0",
+											"left": 109,
+											"top": 347,
+											"width": 271,
+											"height": 13,
+											"text": "+validAction(Action)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
 											"_id": "AAAAAAFlH5u8f9Sm8Io=",
 											"_parent": {
 												"$ref": "AAAAAAFlH4Vum9P4op0="
@@ -1838,7 +1855,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 109,
-											"top": 347,
+											"top": 362,
 											"width": 271,
 											"height": 13,
 											"text": "+generateIO(int memutil)",
@@ -1849,7 +1866,7 @@
 									"left": 104,
 									"top": 342,
 									"width": 281,
-									"height": 23
+									"height": 38
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1889,7 +1906,7 @@
 							"left": 104,
 							"top": 264,
 							"width": 281,
-							"height": 105,
+							"height": 116,
 							"nameCompartment": {
 								"$ref": "AAAAAAFlH4VumtPyM2c="
 							},
@@ -5726,6 +5743,26 @@
 						}
 					],
 					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlKBB2hFXZBuM=",
+							"_parent": {
+								"$ref": "AAAAAAFlH4VumtPv2bI="
+							},
+							"name": "validAction",
+							"documentation": "validates the action",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlKBCdTVaIapc=",
+									"_parent": {
+										"$ref": "AAAAAAFlKBB2hFXZBuM="
+									},
+									"name": "Action",
+									"type": ""
+								}
+							]
+						},
 						{
 							"_type": "UMLOperation",
 							"_id": "AAAAAAFlH5u8UNSjN/k=",
