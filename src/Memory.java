@@ -21,7 +21,7 @@ public class Memory {
     Block[][] blocks;
 
     // Block heap
-    PriorityQueue<Block>.unusedBlocks;
+    PriorityQueue<Block> unusedBlocks;
 
     HashSet<Block> usedBlocks;
 //    PriorityQueue<Block> usedBlocks;
