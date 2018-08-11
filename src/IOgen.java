@@ -99,6 +99,7 @@ public class IOgen {
                 a = ACTION.DELETE;
                 fileIndex = rand.nextInt(this.fileIndices.size());
                 memory.deleteFile(fileIndex);
+                this.fileIndices.remove(fileIndex);
         }
 
         return ACTION;
