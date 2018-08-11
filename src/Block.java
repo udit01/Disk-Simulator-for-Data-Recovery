@@ -48,7 +48,12 @@ public class Block {
         assert this.used == false;
 
         //delte the block from parent file
-        this.parentFile.deleteBlock(this);
+
+        // CHECK THAT IF THE PARENT FILE IS NULL THEN DO NOT DO THE DELETEBLOCK STEP
+        if(this.parentFile != null){
+            this.parentFile.deleteBlock(this);
+        }
+
         this.parentFile = parent_file;
         this.used = true;
         this.hf = 1;//reset

@@ -46,6 +46,7 @@ public class File {
         this.blockList = block_list;
         this.fileState = STATE.USED;
         this.linking_factor = lf;
+        this.original_size = block_list.size();
 
         //not changed
         this.original_size = block_list.size();

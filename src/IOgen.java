@@ -87,7 +87,7 @@ public class IOgen {
                 a = ACTION.NO_OP;
             case 1 :
                 a = ACTION.CREATE;
-                numBlocks = rand.nextInt(FILE_SIZE_LIMIT);
+                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 5;
                 lf = (rand.nextInt(5) > 0) ? 0: 1;
                 this.fileIndices.add(memory.createFile(lf, numBlocks));
             case 2 :
