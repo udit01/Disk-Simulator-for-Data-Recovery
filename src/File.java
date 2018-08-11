@@ -103,7 +103,7 @@ public class File {
         assert this.fileState == STATE.USED;
 
         //Return the RMS deviations of all blocks in 2D
-        
+
         return (0.0);
     }
 }
