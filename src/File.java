@@ -55,6 +55,8 @@ public class File {
     }
 
     void deleteFile(){
+        assert this.fileState == STATE.USED;
+
         this.fileState = STATE.DELETED;
         //deallocate file
         for (Block b : this.blockList){

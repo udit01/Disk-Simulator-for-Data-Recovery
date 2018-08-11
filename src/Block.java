@@ -87,16 +87,18 @@ public class Block {
 
         //ranges of l, sig, rho , mu
         //ranges of pf check
-        assert (lambda <= MAX_PARAM) && (lambda >= MIN_PARAM );
-        assert (sigma  <= MAX_PARAM) && (sigma  >= MIN_PARAM );
-        assert (rho    <= MAX_PARAM) && (rho    >= MIN_PARAM );
-        assert (mu     <= MAX_PARAM) && (mu     >= MIN_PARAM );
+        // ASSERTING THIS IN THE MEMORY FUNCTION
+//        assert (lambda <= MAX_PARAM) && (lambda >= MIN_PARAM );
+//        assert (sigma  <= MAX_PARAM) && (sigma  >= MIN_PARAM );
+//        assert (rho    <= MAX_PARAM) && (rho    >= MIN_PARAM );
+//        assert (mu     <= MAX_PARAM) && (mu     >= MIN_PARAM );
 
         int temp = lambda*this.hf - sigma*this.uf + rho*this.sf + mu*this.lf ;
 
         this.pf = Math.min(Math.max(temp, MIN_PF), MAX_PF);
 
     }
+
 
 }
 
