@@ -1,4 +1,3 @@
-import java.math.BigInteger;
 import java.util.*;
 
 public class Block {
@@ -99,4 +98,35 @@ public class Block {
 
     }
 
+}
+
+class BlockComparator implements Comparator<Block>{
+    public int compare(Block b1, Block b2){
+        if(b1.pf < b2.pf){
+            return 1;
+        }
+        else if(b1.pf == b2.pf){
+            if(b1.j < b2.j){
+                return 1;
+            }
+            else if(b1.j == b2.j){
+                if(b1.i < b2.i){
+                    return 1;
+                }
+                else if(b1.i == b2.i){
+                    return 0;
+                }
+                else{
+                    return -1;
+                }
+            }
+            else{
+                return -1;
+            }
+        }
+        else{
+            return -1;
+        }
+
+    }
 }

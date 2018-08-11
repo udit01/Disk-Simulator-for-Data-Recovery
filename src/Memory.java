@@ -34,8 +34,8 @@ public class Memory {
         }
         this.fileList = new ArrayList<>();
         //put all blocks in unused heap now
-        this.usedBlocks = new PriorityQueue<>(w*h);
-        this.unsedBlocks = new PriorityQueue<>(w*h);
+        this.usedBlocks = new PriorityQueue<>(w*h, new BlockComparator());
+        this.unsedBlocks = new PriorityQueue<>(w*h, new BlockComparator());
 //        for ()
     }
 
