@@ -62,7 +62,7 @@ public class IOgen {
 
     // Memory now stable
     boolean isStable(Memory memory){
-        if(memory.mem_util >= 80){
+        if(memory.mem_util >= MIN_UTIL){
             return true;
         }
         return false;
@@ -74,7 +74,7 @@ public class IOgen {
 
         OIC++;
 
-        int range = (mem_util < 80.0) ? 3: 4;
+        int range = (mem_util < MIN_UTIL) ? 3: 4;
         int op = rand.nextInt(range);
 
         while(!validAction(op, mem_util)){
