@@ -1039,7 +1039,7 @@
 											"top": 346,
 											"width": 271,
 											"height": 13,
-											"text": "+ArrayList[Block] used",
+											"text": "+HashMap[Block] used",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1073,7 +1073,7 @@
 											"top": 376,
 											"width": 271,
 											"height": 13,
-											"text": "+int memutil",
+											"text": "+double memutil",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5345,8 +5345,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
-							"name": "ArrayList[Block] used",
-							"type": ""
+							"name": "HashMap[Block] used"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5364,8 +5363,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
-							"name": "int memutil",
-							"type": ""
+							"name": "double memutil"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -5412,7 +5410,7 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "Memory",
-							"documentation": "Constructor of memory\nSets memory width and height\nInitializes all blocks in memory\nSets their i and j\nInitializes fileList, used and unused attributes\n",
+							"documentation": "Constructor of memory\nSets memory width and height\nInitializes all blocks in memory\nSets their i and j\nInitializes fileList, used and unused attributes\nPut all blocks in ununsed",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -5441,7 +5439,7 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "CreateFile",
-							"documentation": "Creates new file with the given linking factor and of the given size.\n- Form blocklist of the given size with num_blocks number of max priority score blocks from unused heap (check for memory full)\n-  Add these blocks to used blocks\n- Add this file to fileList\n- Call createFile function of the file with blocklist and linking factor\n- Call updateHeap()\n- return file index to IO gen",
+							"documentation": "Creates new file with the given linking factor and of the given size.\n- Form blocklist of the given size with num_blocks number of max priority score blocks from unused heap (check for memory full)\n-  Add these blocks to used blocks\n- Add this file to fileList\n- Call createFile function of the file with blocklist and linking factor\n- Call refresh()\n- return file index to IO gen",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -5471,7 +5469,7 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "DeleteFile",
-							"documentation": "Deletes the file corresponding to the fileIndex.\nAsserts that the file is used.\nCall the deleteFile() method of the file and insert the blocks of the file in the unused heap. Delete these blocks from the used list.\nCall updateHeap()",
+							"documentation": "Deletes the file corresponding to the fileIndex.\nAsserts that the file is used.\nCall the deleteFile() method of the file and insert the blocks of the file in the unused heap. Delete these blocks from the used list.\nCall refresh()",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -5491,7 +5489,7 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "ReadWriteFile",
-							"documentation": "Read/Write operation for the file corresponding to the index provided\n\nAsserts that the file is used.\n\nCall updateHeap()",
+							"documentation": "Read/Write operation for the file corresponding to the index provided\n\nAsserts that the file is used.\n\nCall refresh()",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -5529,7 +5527,7 @@
 								"$ref": "AAAAAAFlH0UbOtHfacw="
 							},
 							"name": "updateParams",
-							"documentation": "Update lamda, sigma, rho, mu of memory \n",
+							"documentation": "Update lamda, sigma, rho, mu of all blocks\n",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
