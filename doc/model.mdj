@@ -1778,23 +1778,6 @@
 										},
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAFlH6FX5dS3osk=",
-											"_parent": {
-												"$ref": "AAAAAAFlH4Vum9P3Bw4="
-											},
-											"model": {
-												"$ref": "AAAAAAFlH6FXutS0770="
-											},
-											"font": "Arial;13;0",
-											"left": 109,
-											"top": 309,
-											"width": 271,
-											"height": 13,
-											"text": "+bool stable",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAFlH6LO0dTAsv4=",
 											"_parent": {
 												"$ref": "AAAAAAFlH4Vum9P3Bw4="
@@ -1804,7 +1787,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 109,
-											"top": 324,
+											"top": 309,
 											"width": 271,
 											"height": 13,
 											"text": "+Action [create; delete; readWrite]",
@@ -1815,7 +1798,7 @@
 									"left": 104,
 									"top": 289,
 									"width": 281,
-									"height": 53
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1838,7 +1821,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 109,
-											"top": 347,
+											"top": 332,
 											"width": 271,
 											"height": 13,
 											"text": "+validAction(Action)",
@@ -1855,18 +1838,35 @@
 											},
 											"font": "Arial;13;0",
 											"left": 109,
+											"top": 347,
+											"width": 271,
+											"height": 13,
+											"text": "+generateIO(Memory mem)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlKCHpHFkIzvw=",
+											"_parent": {
+												"$ref": "AAAAAAFlH4Vum9P4op0="
+											},
+											"model": {
+												"$ref": "AAAAAAFlKCHo71kFW4Q="
+											},
+											"font": "Arial;13;0",
+											"left": 109,
 											"top": 362,
 											"width": 271,
 											"height": 13,
-											"text": "+generateIO(int memutil)",
+											"text": "+isStable(Memory mem)",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 104,
-									"top": 342,
+									"top": 327,
 									"width": 281,
-									"height": 38
+									"height": 53
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -5725,15 +5725,6 @@
 						},
 						{
 							"_type": "UMLAttribute",
-							"_id": "AAAAAAFlH6FXutS0770=",
-							"_parent": {
-								"$ref": "AAAAAAFlH4VumtPv2bI="
-							},
-							"name": "bool stable",
-							"type": ""
-						},
-						{
-							"_type": "UMLAttribute",
 							"_id": "AAAAAAFlH6LOotS9XZc=",
 							"_parent": {
 								"$ref": "AAAAAAFlH4VumtPv2bI="
@@ -5778,8 +5769,25 @@
 									"_parent": {
 										"$ref": "AAAAAAFlH5u8UNSjN/k="
 									},
-									"name": "int memutil",
-									"type": ""
+									"name": "Memory mem"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlKCHo71kFW4Q=",
+							"_parent": {
+								"$ref": "AAAAAAFlH4VumtPv2bI="
+							},
+							"name": "isStable",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFlKDW1nVtvypU=",
+									"_parent": {
+										"$ref": "AAAAAAFlKCHo71kFW4Q="
+									},
+									"name": "Memory mem"
 								}
 							]
 						}

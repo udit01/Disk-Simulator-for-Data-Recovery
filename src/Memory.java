@@ -118,7 +118,7 @@ public class Memory {
     }
 
     void updateSF() {
-        // neightbouring blocks's pf's avg in sf of this block
+        // neighbouring blocks's pf's avg in sf of this block
         ArrayList<Pair<Integer, Integer>> directions = new ArrayList<Pair<Integer, Integer>>(8);
 
         directions.add(new Pair<>(-1, -1));
