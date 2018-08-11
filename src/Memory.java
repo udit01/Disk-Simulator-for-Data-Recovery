@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -117,7 +119,46 @@ public class Memory {
 
     void updateSF(){
         // neightbouring blocks's pf's avg in sf of this block
-        
+        ArrayList<Pair<Integer, Integer>> directions = new ArrayList<Pair<Integer, Integer>>(8);
+
+        directions.add(new Pair<>(-1,-1));
+        directions.add(new Pair<>(-1, 0));
+        directions.add(new Pair<>(-1, 1));
+
+        directions.add(new Pair<>( 0,-1));
+//        directions.add(new Pair<>( 0, 0));
+        directions.add(new Pair<>( 0, 1));
+
+        directions.add(new Pair<>(1,-1));
+        directions.add(new Pair<>(1, 0));
+        directions.add(new Pair<>(1, 1));
+
+        int count = 0;
+        double sum = 0.0;
+
+        int newi = 0;
+        int newj = 0;
+
+        for (int i = 0; i < this.width; i++){
+            for(int j = 0; j < this.height; j++){
+
+                sum = 0.0;
+                count = 0;
+
+                for (int t = 0; t < directions.size(); t++ ){
+                    newi = i + directions.get(t).getKey();
+                    newj = i + directions.get(t).getValue();
+
+                    if (newi >= 0 && newi < this.width && newj >= 0 && newj < this.height ){
+                        sum += this.blocks[newi][newj].pf;
+                        count++;
+                    }
+                }
+
+                this.blocks[i][j].setSF((int)(sum/count));
+
+            }
+        }
 
     }
 
@@ -128,7 +169,7 @@ public class Memory {
 
         for (int i = 0; i < this.width; i++){
             for(int j = 0; j < this.height; j++){
-                Block b = this.blocks[i][j]
+                Block b = this.blocks[i][j];
                 b.updatepf(this.lambda, this.sigma, this.rho, this.mu);
                 if (b.used == false){
                     newHeap.add(this.blocks[i][j]);
