@@ -27,7 +27,7 @@ public class File {
     //only 0 or 10
     int linking_factor;
 
-
+    double slm;
 
 
     File(HashSet<Block> block_list, int lf){
@@ -49,6 +49,8 @@ public class File {
 
         //not changed
         this.original_size = block_list.size();
+
+        this.computeSlm();
 
     }
 
@@ -98,12 +100,34 @@ public class File {
         return  rr;
     }
 
+    void computeSlm(){
+        double ui = 0.0, uj = 0.0;
+
+        for (Block b: this.blockList){
+            ui += b.i; uj += b.j;
+        }
+
+        int numElem = this.blockList.size();
+        ui /= numElem;
+        uj /= numElem;
+
+        double varTotal = 0.0;
+
+        for (Block b: this.blockList){
+            varTotal += Math.pow(b.i - ui, 2) + Math.pow(b.j - uj, 2);
+        }
+
+        varTotal /= numElem;
+
+        this.slm = Math.pow(varTotal, 0.5);
+
+    }
+
     double  getSlm(){
         //
         assert this.fileState == STATE.USED;
 
         //Return the RMS deviations of all blocks in 2D
-
-        return (0.0);
+        return (this.slm);
     }
 }
