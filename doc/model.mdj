@@ -776,13 +776,30 @@
 											"height": 13,
 											"text": "+getSLM()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFlJ0qAXDR7iIs=",
+											"_parent": {
+												"$ref": "AAAAAAFlHzjtjdF0PxQ="
+											},
+											"model": {
+												"$ref": "AAAAAAFlJ0qACTR4+JM="
+											},
+											"font": "Arial;13;0",
+											"left": 525,
+											"top": 804,
+											"width": 263,
+											"height": 13,
+											"text": "+computeSLM()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 520,
 									"top": 709,
 									"width": 273,
-									"height": 98
+									"height": 113
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -822,7 +839,7 @@
 							"left": 520,
 							"top": 616,
 							"width": 273,
-							"height": 191,
+							"height": 206,
 							"nameCompartment": {
 								"$ref": "AAAAAAFlHzjtjdFu94Q="
 							},
@@ -1344,8 +1361,8 @@
 								"$ref": "AAAAAAFF+qBtyKM79qY="
 							},
 							"font": "Arial;13;0",
-							"left": 528,
-							"top": 824,
+							"left": 520,
+							"top": 840,
 							"width": 105,
 							"height": 25,
 							"text": "Increases HF"
@@ -1363,7 +1380,7 @@
 							"tail": {
 								"$ref": "AAAAAAFlHzjtjNFt5p8="
 							},
-							"points": "520:736;504:736;504:840;528:840"
+							"points": "520:736;504:736;504:848;520:848"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -5155,7 +5172,7 @@
 								"$ref": "AAAAAAFlHzjtjNFrHEM="
 							},
 							"name": "createFile",
-							"documentation": "Constructor for file\nCalled when file created.\nUses the blockList passed as its blocklist and sets lf as input\nSets file size as size of blockList argument\n- Assert that the blocklist blocks are unused \n- Iterate through all blocks and if their parentFile pointer null then allocate otherwise deleteBlock from their parentFile and then allocate to this file\n\n\n",
+							"documentation": "Constructor for file\nCalled when file created.\nUses the blockList passed as its blocklist and sets lf as input\nSets file size as size of blockList argument\n- Assert that the blocklist blocks are unused \n- Iterate through all blocks and if their parentFile pointer null then allocate otherwise deleteBlock from their parentFile and then allocate to this file\n- Calls computeSLM()\n\n\n",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -5232,6 +5249,15 @@
 							},
 							"name": "getSLM",
 							"documentation": "Assert that file is used\nReturns the rms deviation of all blocks of the file in terms of their i, j locations.\nreturn slm"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFlJ0qACTR4+JM=",
+							"_parent": {
+								"$ref": "AAAAAAFlHzjtjNFrHEM="
+							},
+							"name": "computeSLM",
+							"documentation": "Computes SLM of files as the deviation og blocks of the file"
 						}
 					]
 				},
