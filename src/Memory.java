@@ -44,6 +44,7 @@ public class Memory {
 
         for (int i = 0; i < w; i++) {
             for (int j = 0; j < h; j++) {
+                this.blocks[i][j] = new Block();
                 this.blocks[i][j].i = i;
                 this.blocks[i][j].j = j;
             }
