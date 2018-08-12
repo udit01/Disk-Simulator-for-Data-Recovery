@@ -5,6 +5,7 @@ public class IOgen {
     static int MAX_UTIL = 95;
     static int MIN_UTIL = 80;
     static int FILE_SIZE_LIMIT = 50;
+    static int PERCENTAGE_LINKED_FILES = 20;
 
     // List of file indices
     ArrayList<Integer> fileIndices;
@@ -88,7 +89,7 @@ public class IOgen {
             case 1 :
                 a = ACTION.CREATE;
                 numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 5;
-                lf = (rand.nextInt(5) > 0) ? 0: 1;
+                lf = (rand.nextInt(100/PERCENTAGE_LINKED_FILES) > 0) ? 0: 1;
                 this.fileIndices.add(memory.createFile(lf, numBlocks));
             case 2 :
                 a = ACTION.READ_WRITE;
