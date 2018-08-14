@@ -11,7 +11,7 @@ public class RL {
 
     // RL convergence parameters
     private static int readDelay = 10;
-    private static double explorationMinutes = 10;
+    private static double explorationMinutes = 60;
     private double explorationConst = (explorationMinutes*60.0)/((readDelay)/1000.0);
 
     // Exponential decay factor
