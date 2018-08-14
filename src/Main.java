@@ -3,7 +3,7 @@ public class Main {
     static int OIN_LIMIT = 10;
 
     // Model and Operation Iteration numbers
-    static int MIN, OIN;
+    static int MIN = 0 , OIN = 0;
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
@@ -20,20 +20,18 @@ public class Main {
         // Initializing RL Module
         // RL rl = new RL();
 
-        while(true){
-            IOgen.ACTION action = io.op(memory);
-            OIN++;
-
-            System.out.println("OIN: " + OIN);
-
-            if(io.isStable(memory) && OIN%OIN_LIMIT == 0){
-                double p = pe.memoryPerformance(memory);
-                MIN++;
-                System.out.println("MIN: " + MIN);
-                System.out.println("Performance: " + p);
-
-
-            }
-        }
+//        while(true){
+//            IOgen.ACTION action = io.op(memory);
+//            OIN++;
+//
+//            System.out.println("OIN: " + OIN);
+//
+//            if(io.isStable(memory) && (OIN%OIN_LIMIT == 0)){
+//                double p = pe.memoryPerformance(memory);
+//                MIN++;
+//                System.out.println("MIN: " + MIN);
+//                System.out.println("Performance: " + p);
+//            }
+//        }
     }
 }

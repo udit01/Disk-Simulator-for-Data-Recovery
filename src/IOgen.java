@@ -2,6 +2,8 @@ import java.util.*;
 
 public class IOgen {
 
+    public
+
     static int MAX_UTIL = 95;
     static int MIN_UTIL = 80;
     static int FILE_SIZE_LIMIT = 50;
@@ -25,7 +27,7 @@ public class IOgen {
     int OIC = 0;
 
     // Action
-    enum ACTION{
+    static enum ACTION{
         NO_OP,  // No operation
         CREATE,  // Create file
         DELETE, // Delete file
