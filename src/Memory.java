@@ -83,16 +83,16 @@ public class Memory {
 
         this.fileList.add(f);
 
-        for (Block bl : f.blockList) {
+//        for (Block bl : f.blockList) {
 
-            File old_parent = bl.parentFile;
+//            File old_parent = bl.parentFile;
 
-            if (old_parent != null) {
-                old_parent.deleteBlock(bl);
-            }
+//            if (old_parent != null) {
+//                old_parent.deleteBlock(bl);
+//            }
 
-            bl.allocate(f, link_factor);
-        }
+//            bl.allocate(f, link_factor);
+//        }
 
         //Refresh the memory pf, sf etc;
         this.refresh();

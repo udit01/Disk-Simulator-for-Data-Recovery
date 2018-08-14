@@ -18,20 +18,20 @@ public class Main {
         IOgen io = new IOgen();
 
         // Initializing RL Module
-        // RL rl = new RL();
+//         RL rl = new RL();
 
-//        while(true){
-//            IOgen.ACTION action = io.op(memory);
-//            OIN++;
-//
-//            System.out.println("OIN: " + OIN);
-//
-//            if(io.isStable(memory) && (OIN%OIN_LIMIT == 0)){
-//                double p = pe.memoryPerformance(memory);
-//                MIN++;
-//                System.out.println("MIN: " + MIN);
-//                System.out.println("Performance: " + p);
-//            }
-//        }
+        while(true){
+            IOgen.ACTION action = io.op(memory);
+            OIN++;
+
+            System.out.println("OIN: " + OIN);
+
+            if(io.isStable(memory) && (OIN%OIN_LIMIT == 0)){
+                double p = pe.memoryPerformance(memory);
+                MIN++;
+                System.out.println("MIN: " + MIN);
+                System.out.println("Performance: " + p);
+            }
+        }
     }
 }

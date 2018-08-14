@@ -38,7 +38,7 @@ public class File {
                 b.allocate(this, lf);
             }
             else{
-                b.parentFile.deleteBlock(b);
+//                b.parentFile.deleteBlock(b);
                 b.allocate(this, lf);
             }
         }
