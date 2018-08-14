@@ -34,7 +34,7 @@ public class PerformanceEvaluator {
             }
         }
 
-        performance = (rr/num_deleted_files) - (slm/num_current_files);
+        performance = (rr/num_deleted_files) - (slm/num_current_files) + 100.0;
 
         return performance;
     }

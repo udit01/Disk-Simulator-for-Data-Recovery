@@ -28,8 +28,6 @@ public class Main {
 
             double p = pe.memoryPerformance(memory);
 
-            assert (io.fileIndices.size() == pe.num_current_files);
-
             System.out.println("Num Current Files : " + pe.num_current_files);
             System.out.println("Num Deleted Files : " + pe.num_deleted_files);
             System.out.println("Num Obsolete Files : " + (memory.fileList.size()-pe.num_deleted_files-pe.num_current_files) );

@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import static javafx.application.Platform.exit;
+
 public class File {
 
     public
@@ -49,7 +51,9 @@ public class File {
     }
 
     void deleteFile(){
-        assert this.fileState == STATE.USED;
+        if(!(this.fileState == STATE.USED)){
+            System.out.println("Trying to Delete an existing or obsolete file!"); exit();
+        }
 
         this.fileState = STATE.DELETED;
         //deallocate file

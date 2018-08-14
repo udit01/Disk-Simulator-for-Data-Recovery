@@ -109,9 +109,9 @@ public class IOgen {
                 break;
             case 3 :
                 a = ACTION.DELETE;
-                fileIndex = rand.nextInt(this.fileIndices.size());
+                fileIndex = fileIndices.get(rand.nextInt(this.fileIndices.size()));
                 memory.deleteFile(fileIndex);
-                this.fileIndices.remove(fileIndex);
+                this.fileIndices.remove(fileIndices.indexOf(fileIndex));
                 System.out.println("Action : Delete File");
                 break;
         }
