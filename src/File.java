@@ -34,13 +34,7 @@ public class File {
 
         for (Block b: block_list){
             assert (b.used == false);
-            if (b.parentFile == null){
-                b.allocate(this, lf);
-            }
-            else{
-//                b.parentFile.deleteBlock(b);
-                b.allocate(this, lf);
-            }
+            b.allocate(this, lf);
         }
 
         this.blockList = block_list;
