@@ -2,7 +2,7 @@ import java.io.PrintWriter;
 
 public class Main {
 
-    static int OIN_LIMIT = 10;
+    static int OIN_LIMIT = 100;
 
     // Model and Operation Iteration numbers
     static int MIN = 0 , OIN = 0;
@@ -55,7 +55,7 @@ public class Main {
             ioWriter.println("Performance: " + p);
 
             if(io.isStable(memory) && (OIN % OIN_LIMIT == 0)){
-                rl.run(cumulativePerformance/100.0);
+                rl.run(cumulativePerformance/OIN_LIMIT);
                 memory.lambda = rl.state[0];
                 memory.sigma = rl.state[1];
                 memory.rho = rl.state[2];
@@ -68,17 +68,20 @@ public class Main {
                     rlWriter.print(rl.state[i] + ", ");
                 }
                 rlWriter.println();
-                rlWriter.println("Cumulative performance : " + cumulativePerformance/100.0);
+                rlWriter.println("Cumulative performance : " + cumulativePerformance/OIN_LIMIT);
                 rlWriter.println("\n");
-            }
 
-            if(MIN % 100 == 0 && MIN > 0 && OIN % OIN_LIMIT == 0){
-                System.out.println(rl.epsilon);
-                System.out.println("Iterations completed : " + MIN );
-                System.out.println("Action : " + rl.a);
-                System.out.println("Performance : " + cumulativePerformance/100.0 + "\n");
+                if(MIN % 100 == 0 && MIN > 0){
+                    System.out.println(rl.epsilon);
+                    System.out.println("Iterations completed : " + MIN );
+                    System.out.println("Last Action : " + rl.a);
+                    System.out.println("Performance : " + (cumulativePerformance/OIN_LIMIT) + "\n");
+                }
+
                 cumulativePerformance = 0;
             }
+
+
         }
 
         rlWriter.close();
