@@ -86,33 +86,33 @@ public class IOgen {
             op = rand.nextInt(range);
         }
 
-        System.out.println("Num IOGen files : " + this.fileIndices.size());
+        //System.out.println("Num IOGen files : " + this.fileIndices.size());
         ACTION a = ACTION.NO_OP;
 
         switch (op){
             case 0 :
                 a = ACTION.NO_OP;
-                System.out.println("Action : No Operation");
+                //System.out.println("Action : No Operation");
                 break;
             case 1 :
                 a = ACTION.CREATE;
                 numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 500;
                 lf = (rand.nextInt(100/PERCENTAGE_LINKED_FILES) > 0) ? 0: 1;
                 this.fileIndices.add(memory.createFile(lf, numBlocks));
-                System.out.println("Action : Create file, Num Blocks : " + numBlocks + ", LF : " + lf);
+                //System.out.println("Action : Create file, Num Blocks : " + numBlocks + ", LF : " + lf);
                 break;
             case 2 :
                 a = ACTION.READ_WRITE;
                 fileIndex = rand.nextInt(this.fileIndices.size());
                 memory.readWriteFile(fileIndex);
-                System.out.println("Action : Read Write File");
+                //System.out.println("Action : Read Write File");
                 break;
             case 3 :
                 a = ACTION.DELETE;
                 fileIndex = fileIndices.get(rand.nextInt(this.fileIndices.size()));
                 memory.deleteFile(fileIndex);
                 this.fileIndices.remove(fileIndices.indexOf(fileIndex));
-                System.out.println("Action : Delete File");
+                //System.out.println("Action : Delete File");
                 break;
         }
 

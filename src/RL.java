@@ -209,14 +209,14 @@ public class RL {
     void run(double performance){
         this.MIC++;
 
-        System.out.println("Iteration Number : " + this.MIC);
-        System.out.println("Performance : " + performance);
+        //System.out.println("Iteration Number : " + this.MIC);
+        //System.out.println("Performance : " + performance);
         this.epsilon = Math.exp(-(double) this.MIC / this.explorationConst);
         this.getAction();
 
         this.setSPrime(this.a);
 
-        System.out.println("Action : " + this.a);
+        //System.out.println("Action : " + this.a);
 
         this.r = this.getDeltaPerformance(performance);
         this.lookAheadValue = this.getLookAhead();
@@ -225,11 +225,11 @@ public class RL {
         this.Q[s][a] = this.Q[s][a] + this.alpha * (this.sample - this.Q[s][a]);
         this.s = this.sPrime;
 
-        System.out.print("State : ");
-        for (int i = 0; i < num_params; i++) {
-            System.out.print(this.state[i] + ", ");
-        }
-        System.out.println("\n");
+        //System.out.print("State : ");
+        //for (int i = 0; i < num_params; i++) {
+        //    System.out.print(this.state[i] + ", ");
+        //}
+        //System.out.println("\n");
 
         if (this.MIC == 2) {
             initializeQ();
