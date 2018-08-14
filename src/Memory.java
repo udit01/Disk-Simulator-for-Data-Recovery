@@ -169,7 +169,7 @@ public class Memory {
 
         this.unusedBlocks = newHeap;
 
-        this.mem_util = ((double) (this.usedBlocks.size())) / (this.width * this.height);
+        this.mem_util = ((double) (this.usedBlocks.size())) * 100 / (this.width * this.height);
 
     }
 

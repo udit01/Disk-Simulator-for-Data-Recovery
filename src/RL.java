@@ -11,7 +11,7 @@ public class RL {
 
     // RL convergence parameters
     private static int readDelay = 10;
-    private static double explorationMinutes = 1;
+    private static double explorationMinutes = 10;
     private double explorationConst = (explorationMinutes*60.0)/((readDelay)/1000.0);
 
     // Exponential decay factor
@@ -69,7 +69,7 @@ public class RL {
         this.s = 0;
         this.sPrime = 0;
 
-        this.rand = new Random();
+        this.rand = new Random(System.currentTimeMillis());
     }
 
     // Initialize Q

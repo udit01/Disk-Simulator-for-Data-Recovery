@@ -89,7 +89,7 @@ public class File {
 
         double rr = 0;
         switch (linking_factor){
-            case 0: rr = (double)(cs)/((double)(this.original_size));
+            case 0: rr = (double)(cs)/((double)(this.original_size)); break;
             case 10: rr = (cs < this.original_size) ? 0: 1 ;
         }
 

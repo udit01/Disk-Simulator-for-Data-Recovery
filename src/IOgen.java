@@ -6,7 +6,7 @@ public class IOgen {
 
     static int MAX_UTIL = 95;
     static int MIN_UTIL = 80;
-    static int FILE_SIZE_LIMIT = 50;
+    static int FILE_SIZE_LIMIT = 2000;
     static int PERCENTAGE_LINKED_FILES = 20;
 
     // List of file indices
@@ -49,14 +49,17 @@ public class IOgen {
                 if(util > MAX_UTIL) {
                     return false;
                 }
+                break;
             case 2:
                 if(this.fileIndices.isEmpty()){
                     return false;
                 }
+                break;
             case 3:
                 if(this.fileIndices.isEmpty()) {
                     return false;
                 }
+                break;
         }
 
         return true;
@@ -77,31 +80,40 @@ public class IOgen {
         OIC++;
 
         int range = (memory.mem_util < MIN_UTIL) ? 3: 4;
-        int op = rand.nextInt(range);
+        int op = (this.fileIndices.isEmpty()) ? 1: rand.nextInt(range);
 
         while(!validAction(op, memory.mem_util)){
             op = rand.nextInt(range);
         }
 
+        System.out.println("Num IOGen files : " + this.fileIndices.size());
         ACTION a = ACTION.NO_OP;
 
         switch (op){
             case 0 :
                 a = ACTION.NO_OP;
+                System.out.println("Action : No Operation");
+                break;
             case 1 :
                 a = ACTION.CREATE;
-                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 5;
+                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 500;
                 lf = (rand.nextInt(100/PERCENTAGE_LINKED_FILES) > 0) ? 0: 1;
                 this.fileIndices.add(memory.createFile(lf, numBlocks));
+                System.out.println("Action : Create file, Num Blocks : " + numBlocks + ", LF : " + lf);
+                break;
             case 2 :
                 a = ACTION.READ_WRITE;
                 fileIndex = rand.nextInt(this.fileIndices.size());
                 memory.readWriteFile(fileIndex);
+                System.out.println("Action : Read Write File");
+                break;
             case 3 :
                 a = ACTION.DELETE;
                 fileIndex = rand.nextInt(this.fileIndices.size());
                 memory.deleteFile(fileIndex);
                 this.fileIndices.remove(fileIndex);
+                System.out.println("Action : Delete File");
+                break;
         }
 
         return a;

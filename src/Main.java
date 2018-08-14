@@ -18,20 +18,34 @@ public class Main {
         IOgen io = new IOgen();
 
         // Initializing RL Module
-//         RL rl = new RL();
+         RL rl = new RL(4, 9);
 
-        while(true){
+        while(rl.epsilon > 0.0003){
             IOgen.ACTION action = io.op(memory);
             OIN++;
-
             System.out.println("OIN: " + OIN);
+            System.out.println("Memory Util : " + memory.mem_util + " %");
 
-            if(io.isStable(memory) && (OIN%OIN_LIMIT == 0)){
-                double p = pe.memoryPerformance(memory);
+            double p = pe.memoryPerformance(memory);
+
+            assert (io.fileIndices.size() == pe.num_current_files);
+
+            System.out.println("Num Current Files : " + pe.num_current_files);
+            System.out.println("Num Deleted Files : " + pe.num_deleted_files);
+            System.out.println("Num Obsolete Files : " + (memory.fileList.size()-pe.num_deleted_files-pe.num_current_files) );
+            System.out.println("Performance: " + p);
+
+            if(io.isStable(memory) && (OIN % OIN_LIMIT == 0)){
+                rl.run(p);
+                memory.lambda = rl.state[0];
+                memory.sigma = rl.state[1];
+                memory.rho = rl.state[2];
+                memory.mu = rl.state[3];
                 MIN++;
                 System.out.println("MIN: " + MIN);
-                System.out.println("Performance: " + p);
             }
+
+            System.out.println();
         }
     }
 }
