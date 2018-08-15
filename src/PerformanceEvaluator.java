@@ -1,3 +1,7 @@
+import com.sun.xml.internal.ws.api.message.ExceptionHasMessage;
+
+import java.util.Iterator;
+
 public class PerformanceEvaluator {
 
     // Recovery ratio of files
@@ -23,16 +27,32 @@ public class PerformanceEvaluator {
         slm = 0;
         rr = 0;
 
-        for(File f : memory.fileList){
+        for(File f : memory.currentFileList){
             if(f.fileState == File.STATE.USED){
                 slm += f.getSlm();
-                num_current_files++;
             }
-            else if(f.fileState == File.STATE.DELETED){
-                rr += f.getRecoveryRatio();
-                num_deleted_files++;
+            else{
+                throw new java.lang.RuntimeException("Performance Evaluator : currentFileList has files that are not USED");
             }
         }
+
+        Iterator<File> iter = memory.deletedFileList.iterator();
+        while (iter.hasNext()) {
+            File p = iter.next();
+            if (p.fileState == File.STATE.OBSOLETE) iter.remove();
+        }
+
+        for(File f : memory.deletedFileList){
+            if(f.fileState == File.STATE.DELETED){
+                rr += f.getRecoveryRatio();
+            }
+            else{
+                throw new java.lang.RuntimeException("Performance Evaluator : deletedfFileList has files that are not DELETED");
+            }
+        }
+
+        num_current_files = memory.currentFileList.size();
+        num_deleted_files = memory.deletedFileList.size();
 
         performance = (rr/num_deleted_files) - (slm/num_current_files) + 100.0;
 

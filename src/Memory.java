@@ -27,8 +27,12 @@ public class Memory {
 //    PriorityQueue<Block> usedBlocks;
 
     //List of all files
-    ArrayList<File> fileList;
+    ArrayList<File> currentFileList;
+    ArrayList<File> deletedFileList;
 
+    ArrayList<Pair<Integer, Integer>> directions = new ArrayList<Pair<Integer, Integer>>(8);
+
+    int totalCreatedFiles;
 
     Memory(int w, int h) {
         this.width = w;
@@ -50,7 +54,8 @@ public class Memory {
             }
         }
 
-        this.fileList = new ArrayList<>();
+        this.currentFileList = new ArrayList<>();
+        this.deletedFileList = new ArrayList<>();
         //put all blocks in unused heap now
         this.usedBlocks = new HashSet<>(w * h);
 
@@ -61,9 +66,21 @@ public class Memory {
                 this.unusedBlocks.add(this.blocks[i][j]);
             }
         }
+
+        this.directions.add(new Pair<>(-1, -1));
+        this.directions.add(new Pair<>(-1, 0));
+        this.directions.add(new Pair<>(-1, 1));
+        this.directions.add(new Pair<>(0, -1));
+//  this.directions.add(new Pair<>( 0, 0));
+        this.directions.add(new Pair<>(0, 1));
+        this.directions.add(new Pair<>(1, -1));
+        this.directions.add(new Pair<>(1, 0));
+        this.directions.add(new Pair<>(1, 1));
+
+        this.totalCreatedFiles = 0;
     }
 
-    int createFile(int link_factor, int num_blocks) {
+    void createFile(int link_factor, int num_blocks) {
 
         HashSet<Block> block_list = new HashSet<>(num_blocks);
 
@@ -81,16 +98,18 @@ public class Memory {
         //if enough blocks
         File f = new File(block_list, link_factor);
 
-        this.fileList.add(f);
+        this.currentFileList.add(f);
+
+        this.totalCreatedFiles++;
 
         //Refresh the memory pf, sf etc;
         this.refresh();
-        //the index of this file
-        return (fileList.size() - 1);
     }
 
     void deleteFile(int fileIndex) {
-        File cf = this.fileList.get(fileIndex);
+        File cf = this.currentFileList.get(fileIndex);
+        this.deletedFileList.add(cf);
+        this.currentFileList.remove(fileIndex);
         assert cf != null;
         cf.deleteFile();
         for (Block b : cf.blockList) {
@@ -103,25 +122,12 @@ public class Memory {
     // Update factors of all blocks per transaction
 
     void readWriteFile(int fileIndex) {
-        this.fileList.get(fileIndex).readWriteFile();
+        this.currentFileList.get(fileIndex).readWriteFile();
         this.refresh();
     }
 
     void updateSF() {
         // neighbouring blocks's pf's avg in sf of this block
-        ArrayList<Pair<Integer, Integer>> directions = new ArrayList<Pair<Integer, Integer>>(8);
-
-        directions.add(new Pair<>(-1, -1));
-        directions.add(new Pair<>(-1, 0));
-        directions.add(new Pair<>(-1, 1));
-
-        directions.add(new Pair<>(0, -1));
-//        directions.add(new Pair<>( 0, 0));
-        directions.add(new Pair<>(0, 1));
-
-        directions.add(new Pair<>(1, -1));
-        directions.add(new Pair<>(1, 0));
-        directions.add(new Pair<>(1, 1));
 
         int count = 0;
         double sum = 0.0;

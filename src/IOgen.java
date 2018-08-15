@@ -4,13 +4,10 @@ public class IOgen {
 
     public
 
-    static int MAX_UTIL = 95;
+    static int MAX_UTIL = 90;
     static int MIN_UTIL = 80;
-    static int FILE_SIZE_LIMIT = 2000;
+    static int FILE_SIZE_LIMIT = 5;
     static int PERCENTAGE_LINKED_FILES = 20;
-
-    // List of file indices
-    ArrayList<Integer> fileIndices;
 
     // Random op integer
     int op; // 0 - no op, 1 - create, 2 - read/write, 3 - delete
@@ -37,26 +34,25 @@ public class IOgen {
 
     // New IO Generator
     IOgen(){
-        fileIndices = new ArrayList<>();
         rand = new Random();
         op = 0;
     }
 
     // Validation action
-    boolean validAction(int a, double util){
+    boolean validAction(int a, Memory memory){
         switch (a){
             case 1:
-                if(util > MAX_UTIL) {
+                if(memory.mem_util > MAX_UTIL) {
                     return false;
                 }
                 break;
             case 2:
-                if(this.fileIndices.isEmpty()){
+                if(memory.currentFileList.isEmpty()){
                     return false;
                 }
                 break;
             case 3:
-                if(this.fileIndices.isEmpty()) {
+                if(memory.currentFileList.isEmpty()) {
                     return false;
                 }
                 break;
@@ -80,9 +76,9 @@ public class IOgen {
         OIC++;
 
         int range = (memory.mem_util < MIN_UTIL) ? 3: 4;
-        int op = (this.fileIndices.isEmpty()) ? 1: rand.nextInt(range);
+        int op = (memory.currentFileList.isEmpty()) ? 1: rand.nextInt(range);
 
-        while(!validAction(op, memory.mem_util)){
+        while(!validAction(op, memory)){
             op = rand.nextInt(range);
         }
 
@@ -96,22 +92,21 @@ public class IOgen {
                 break;
             case 1 :
                 a = ACTION.CREATE;
-                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 500;
+                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 5;
                 lf = (rand.nextInt(100/PERCENTAGE_LINKED_FILES) > 0) ? 0: 1;
-                this.fileIndices.add(memory.createFile(lf, numBlocks));
+                memory.createFile(lf, numBlocks);
                 //System.out.println("Action : Create file, Num Blocks : " + numBlocks + ", LF : " + lf);
                 break;
             case 2 :
                 a = ACTION.READ_WRITE;
-                fileIndex = rand.nextInt(this.fileIndices.size());
+                fileIndex = rand.nextInt(memory.currentFileList.size());
                 memory.readWriteFile(fileIndex);
                 //System.out.println("Action : Read Write File");
                 break;
             case 3 :
                 a = ACTION.DELETE;
-                fileIndex = fileIndices.get(rand.nextInt(this.fileIndices.size()));
+                fileIndex = rand.nextInt(memory.currentFileList.size());
                 memory.deleteFile(fileIndex);
-                this.fileIndices.remove(fileIndices.indexOf(fileIndex));
                 //System.out.println("Action : Delete File");
                 break;
         }

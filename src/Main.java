@@ -2,7 +2,7 @@ import java.io.PrintWriter;
 
 public class Main {
 
-    static int OIN_LIMIT = 100;
+    static int OIN_LIMIT = 50;
 
     // Model and Operation Iteration numbers
     static int MIN = 0 , OIN = 0;
@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Hello World!");
 
         // Initializing 256 MB memory
-        Memory memory = new Memory(256, 256);
+        Memory memory = new Memory(10, 10);
 
         // Initializing performance evaluator
         PerformanceEvaluator pe = new PerformanceEvaluator();
@@ -30,8 +30,6 @@ public class Main {
 
         while(rl.epsilon > 0.0003){
             IOgen.ACTION action = io.op(memory);
-
-            ioWriter.println("Num IOGen files : " + io.fileIndices.size());
 
             switch (action){
                 case NO_OP: ioWriter.println("Action : No Operation"); break;
@@ -51,7 +49,7 @@ public class Main {
 
             ioWriter.println("Num Current Files : " + pe.num_current_files);
             ioWriter.println("Num Deleted Files : " + pe.num_deleted_files);
-            ioWriter.println("Num Obsolete Files : " + (memory.fileList.size()-pe.num_deleted_files-pe.num_current_files) );
+            ioWriter.println("Num Obsolete Files : " + (memory.totalCreatedFiles-pe.num_deleted_files-pe.num_current_files) );
             ioWriter.println("Performance: " + p);
 
             if(io.isStable(memory) && (OIN % OIN_LIMIT == 0)){
@@ -62,6 +60,7 @@ public class Main {
                 memory.mu = rl.state[3];
                 MIN++;
                 rlWriter.println("MIN: " + MIN);
+                rlWriter.println("Epsilon : " + rl.epsilon);
                 rlWriter.println("Action : " + rl.a);
                 rlWriter.print("State : ");
                 for (int i = 0; i < 4; i++) {
@@ -71,7 +70,7 @@ public class Main {
                 rlWriter.println("Cumulative performance : " + cumulativePerformance/OIN_LIMIT);
                 rlWriter.println("\n");
 
-                if(MIN % 100 == 0 && MIN > 0){
+                if(MIN % 10000 == 0 && MIN > 0){
                     System.out.println(rl.epsilon);
                     System.out.println("Iterations completed : " + MIN );
                     System.out.println("Last Action : " + rl.a);

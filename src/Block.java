@@ -47,7 +47,7 @@ public class Block {
     void allocate(File parent_file, int link_factor){
         assert this.used == false;
 
-        //delte the block from parent file
+        //delete the block from parent file
 
         // CHECK THAT IF THE PARENT FILE IS NULL THEN DO NOT DO THE DELETEBLOCK STEP
         if(this.parentFile != null){
