@@ -6,8 +6,8 @@ import static java.lang.Double.NEGATIVE_INFINITY;
 public class RL {
 
     // RL computational parameters
-    private static double gamma = 0.75; // Look-ahead weight
-    private static double alpha = 0.20; // Forgetfulness weight
+    private static double gamma = 0.20; // Look-ahead weight
+    private static double alpha = 0.95; // Forgetfulness weight
 
     // RL convergence parameters
     private static int readDelay = 10;

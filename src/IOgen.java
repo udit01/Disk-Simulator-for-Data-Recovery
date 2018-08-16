@@ -4,9 +4,9 @@ public class IOgen {
 
     public
 
-    static int MAX_UTIL = 90;
+    static int MAX_UTIL = 85;
     static int MIN_UTIL = 80;
-    static int FILE_SIZE_LIMIT = 5;
+    static int FILE_SIZE_LIMIT = 20;
     static int PERCENTAGE_LINKED_FILES = 20;
 
     // Random op integer
@@ -23,6 +23,8 @@ public class IOgen {
     // Operation iteration counter
     int OIC = 0;
 
+    int counter;
+
     // Action
     static enum ACTION{
         NO_OP,  // No operation
@@ -36,6 +38,7 @@ public class IOgen {
     IOgen(){
         rand = new Random();
         op = 0;
+        counter = 0;
     }
 
     // Validation action
@@ -76,7 +79,19 @@ public class IOgen {
         OIC++;
 
         int range = (memory.mem_util < MIN_UTIL) ? 3: 4;
-        int op = (memory.currentFileList.isEmpty()) ? 1: rand.nextInt(range);
+        op = (memory.currentFileList.isEmpty()) ? 1: rand.nextInt(range);
+
+//        if(memory.mem_util < 90){
+//            op = 1;
+//        }
+//        else{
+//            if(op == 1){
+//                op = 3;
+//            }
+//            else{
+//                op = 1;
+//            }
+//        }
 
         while(!validAction(op, memory)){
             op = rand.nextInt(range);
@@ -92,8 +107,9 @@ public class IOgen {
                 break;
             case 1 :
                 a = ACTION.CREATE;
-                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 5;
+                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 10;
                 lf = (rand.nextInt(100/PERCENTAGE_LINKED_FILES) > 0) ? 0: 1;
+                //counter = (counter +1)%5;
                 memory.createFile(lf, numBlocks);
                 //System.out.println("Action : Create file, Num Blocks : " + numBlocks + ", LF : " + lf);
                 break;

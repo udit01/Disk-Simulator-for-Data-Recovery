@@ -54,7 +54,7 @@ public class PerformanceEvaluator {
         num_current_files = memory.currentFileList.size();
         num_deleted_files = memory.deletedFileList.size();
 
-        performance = (rr/num_deleted_files) - (slm/num_current_files) + 100.0;
+        performance = (100.0 * rr/num_deleted_files) - (slm/num_current_files);
 
         return performance;
     }
