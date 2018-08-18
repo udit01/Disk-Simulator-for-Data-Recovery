@@ -158,6 +158,22 @@ public class Memory {
 
     }
 
+    void printMemory() {
+
+        for (int i = 0; i < this.width; i++) {
+            for (int j = 0; j < this.height; j++) {
+                Block b = this.blocks[i][j];
+                if (!b.used) {
+                    System.out.print("- \t");
+                }
+                else{
+                    System.out.print(this.currentFileList.indexOf(b.parentFile) + " \t");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     void refresh() {
         this.updateSF();
 

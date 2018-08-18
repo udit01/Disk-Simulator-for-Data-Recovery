@@ -1,4 +1,7 @@
+import java.awt.*;
 import java.io.PrintWriter;
+
+import static java.lang.Thread.sleep;
 
 public class Main {
 
@@ -28,7 +31,9 @@ public class Main {
         PrintWriter rlWriter = new PrintWriter("Model-iterations.txt", "UTF-8");
         PrintWriter ioWriter = new PrintWriter("IO-iterations.txt", "UTF-8");
 
-        while(rl.epsilon > 0.0003){
+        Toolkit.getDefaultToolkit().beep();
+
+        while(rl.epsilon > 0.00003){
             IOgen.ACTION action = io.op(memory);
 
 //            switch (action){
@@ -89,7 +94,15 @@ public class Main {
 
         }
 
+        memory.printMemory();
+        rl.printQ();
+
         rlWriter.close();
         ioWriter.close();
+        for(int i = 0; i < 10; i++){
+            Toolkit.getDefaultToolkit().beep();
+            sleep(1000);
+        }
+
     }
 }

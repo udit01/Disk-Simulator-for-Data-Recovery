@@ -6,12 +6,12 @@ import static java.lang.Double.NEGATIVE_INFINITY;
 public class RL {
 
     // RL computational parameters
-    private static double gamma = 0.20; // Look-ahead weight
-    private static double alpha = 0.95; // Forgetfulness weight
+    private static double gamma = 0.80; // Look-ahead weight
+    private static double alpha = 0.008; // Learning rate
 
     // RL convergence parameters
     private static int readDelay = 10;
-    private static double explorationMinutes = 60;
+    private static double explorationMinutes = 500;
     private double explorationConst = (explorationMinutes*60.0)/((readDelay)/1000.0);
 
     // Exponential decay factor
