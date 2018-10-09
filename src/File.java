@@ -82,12 +82,9 @@ public class File {
     }
 
     void readWriteFile(){
-        double usage = 0;
-        for (Block block: this.blockList){
+        for (Block block: this.blockList) {
             block.increaseUF();
-            usage = block.uf;
         }
-        this.uf = (int) (usage / this.blockList.size());
     }
 
     double getRecoveryRatio(){
@@ -102,10 +99,12 @@ public class File {
             case 10: rr = (cs < this.original_size) ? 0: 1 ;
         }
 
+        this.uf = 0;
         for (Block b: this.blockList){
-            this.uf = b.uf;
+            this.uf += b.uf;
             break;
         }
+        this.uf = this.uf / this.blockList.size();
         return  rr;
     }
 
