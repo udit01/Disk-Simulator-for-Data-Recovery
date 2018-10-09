@@ -44,7 +44,7 @@ public class PerformanceEvaluator {
 
         for(File f : memory.deletedFileList){
             if(f.fileState == File.STATE.DELETED){
-                rr += f.getRecoveryRatio();
+                rr += f.getRecoveryRatio() * (f.uf + 1);
             }
             else{
                 throw new java.lang.RuntimeException("Performance Evaluator : deletedfFileList has files that are not DELETED");

@@ -107,8 +107,8 @@ public class IOgen {
                 break;
             case 1 :
                 a = ACTION.CREATE;
-                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 10;
-                lf = (rand.nextInt(100/PERCENTAGE_LINKED_FILES) > 0) ? 0: 1;
+                numBlocks = rand.nextInt(FILE_SIZE_LIMIT) + 10; //10;
+                lf = (rand.nextInt(100/PERCENTAGE_LINKED_FILES) > 0) ? 0: 1; //(counter == 0) ? 1 : 0;
                 //counter = (counter +1)%5;
                 memory.createFile(lf, numBlocks);
                 //System.out.println("Action : Create file, Num Blocks : " + numBlocks + ", LF : " + lf);
@@ -121,7 +121,7 @@ public class IOgen {
                 break;
             case 3 :
                 a = ACTION.DELETE;
-                fileIndex = rand.nextInt(memory.currentFileList.size());
+                fileIndex = rand.nextInt(memory.currentFileList.size()); //0;
                 memory.deleteFile(fileIndex);
                 //System.out.println("Action : Delete File");
                 break;

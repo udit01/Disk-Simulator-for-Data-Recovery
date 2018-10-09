@@ -7,11 +7,11 @@ public class RL {
 
     // RL computational parameters
     private static double gamma = 0.80; // Look-ahead weight
-    private static double alpha = 0.008; // Learning rate
+    private static double alpha = 0.02; // Learning rate
 
     // RL convergence parameters
     private static int readDelay = 10;
-    private static double explorationMinutes = 500;
+    private static double explorationMinutes = 1000;
     private double explorationConst = (explorationMinutes*60.0)/((readDelay)/1000.0);
 
     // Exponential decay factor

@@ -18,6 +18,7 @@ public class File {
     // Block list
     HashSet<Block> blockList ;//= new ArrayList<>();
 
+    int uf = 0;
 
     enum STATE{
         USED,  //Currently allocated blocks
@@ -47,6 +48,7 @@ public class File {
         this.original_size = block_list.size();
 
         this.computeSlm();
+        this.uf = 0;
 
     }
 
@@ -80,9 +82,12 @@ public class File {
     }
 
     void readWriteFile(){
+        double usage = 0;
         for (Block block: this.blockList){
             block.increaseUF();
+            usage = block.uf;
         }
+        this.uf = (int) (usage / this.blockList.size());
     }
 
     double getRecoveryRatio(){
@@ -97,6 +102,10 @@ public class File {
             case 10: rr = (cs < this.original_size) ? 0: 1 ;
         }
 
+        for (Block b: this.blockList){
+            this.uf = b.uf;
+            break;
+        }
         return  rr;
     }
 

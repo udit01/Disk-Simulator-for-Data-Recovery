@@ -70,22 +70,27 @@ public class Main {
                 memory.rho = rl.state[2];
                 memory.mu = rl.state[3];
                 MIN++;
-                rlWriter.println("MIN: " + MIN);
-                rlWriter.println("Epsilon : " + rl.epsilon);
-                rlWriter.println("Action : " + rl.a);
-                rlWriter.print("State : ");
-                for (int i = 0; i < 4; i++) {
-                    rlWriter.print(rl.state[i] + ", ");
-                }
-                rlWriter.println();
-                rlWriter.println("Cumulative performance : " + cumulativePerformance/OIN_LIMIT);
-                rlWriter.println("\n");
+//                rlWriter.println("MIN: " + MIN);
+//                rlWriter.println("Epsilon : " + rl.epsilon);
+//                rlWriter.println("Action : " + rl.a);
+//                rlWriter.print("State : ");
+//                for (int i = 0; i < 4; i++) {
+//                    rlWriter.print(rl.state[i] + ", ");
+//                }
+//                rlWriter.println();
+//                rlWriter.println("Cumulative performance : " + cumulativePerformance/OIN_LIMIT);
+//                rlWriter.println("\n");
 
                 if(MIN % 10000 == 0 && MIN > 0){
                     System.out.println(rl.epsilon);
                     System.out.println("Iterations completed : " + MIN );
                     System.out.println("Last Action : " + rl.a);
-                    System.out.println("Performance : " + (cumulativePerformance/OIN_LIMIT) + "\n");
+                    System.out.println("Performance : " + (cumulativePerformance/OIN_LIMIT));
+                    System.out.print("State : " );
+                    for (int i = 0; i < 4; i++) {
+                        System.out.print(rl.state[i] + ", ");
+                    }
+                    System.out.println("Epsilon : " + rl.epsilon + "\n");
                 }
 
                 cumulativePerformance = 0;

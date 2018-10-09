@@ -49,7 +49,7 @@ public class Block {
 
         //delete the block from parent file
 
-        // CHECK THAT IF THE PARENT FILE IS NULL THEN DO NOT DO THE DELETEBLOCK STEP
+        // CHECK THAT IF THE PARENT FILE IS NULL THEN DO NOT DO THE DELETE BLOCK STEP
         if(this.parentFile != null){
             this.parentFile.deleteBlock(this);
         }
