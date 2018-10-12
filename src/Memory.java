@@ -172,6 +172,16 @@ public class Memory {
             }
             System.out.println();
         }
+
+        System.out.println("Number of current files : " + this.currentFileList.size());
+        System.out.println("Number of deleted files : " + this.deletedFileList.size());
+        int obsolete = 0;
+        for(File file : this.deletedFileList){
+            if (file.fileState == File.STATE.OBSOLETE){
+                obsolete+=1;
+            }
+        }
+        System.out.println("Number of obselete files out of deleted files : " + obsolete);
     }
 
     void refresh() {
