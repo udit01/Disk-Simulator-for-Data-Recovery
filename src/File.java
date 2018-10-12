@@ -48,7 +48,11 @@ public class File {
         this.original_size = block_list.size();
 
         this.computeSlm();
-        this.uf = 0;
+        this.uf = 1;
+
+        for (Block block: this.blockList){
+            block.increaseUF();
+        }
 
     }
 
