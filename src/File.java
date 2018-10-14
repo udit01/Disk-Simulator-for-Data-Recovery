@@ -96,6 +96,8 @@ public class File {
 
         //current size
         int cs = this.blockList.size();
+        if(cs == 0)
+            return 0;
 
         double rr = 0;
         switch (linking_factor){

@@ -9,7 +9,7 @@ public class Block {
     static int MAX_PARAM = 9;
     static int MIN_PARAM = 0;
     static int MAX_FACTORS = 100000;
-    static int MIN_FACTORS = 0;
+    static int MIN_FACTORS = -100000;
 
     // Factors
     int hf ; // History Factor
@@ -85,7 +85,7 @@ public class Block {
     }
 
     void setSF(int val){
-        this.sf = Math.min(Math.max(val, MIN_FACTORS), MAX_FACTORS);
+        this.sf = val;
     }
 
     // Update Priority Score

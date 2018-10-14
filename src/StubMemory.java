@@ -1,9 +1,10 @@
 import javafx.util.Pair;
 
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.PriorityQueue;
 
-public class Memory {
+public class StubMemory {
 
     // Memory size parameters
 
@@ -34,17 +35,12 @@ public class Memory {
 
     int totalCreatedFiles;
 
-    Memory(int w, int h) {
+    StubMemory(int w, int h) {
         this.width = w;
         this.height = h;
         this.blocks = new Block[w][h];
 
         this.mem_util = 0.0;
-
-        this.lambda = 0;
-        this.sigma = 1;
-        this.rho = 0;
-        this.mu = 1;
 
         for (int i = 0; i < w; i++) {
             for (int j = 0; j < h; j++) {
@@ -88,7 +84,7 @@ public class Memory {
             Block b = this.unusedBlocks.poll();
 
             if (b == null) {
-                throw new java.lang.RuntimeException("Memory Full!");
+                throw new RuntimeException("Memory Full!");
             }
 
             block_list.add(b);
@@ -150,7 +146,9 @@ public class Memory {
                         count++;
                     }
                 }
+
                 this.blocks[i][j].setSF((int) (sum / count));
+                this.blocks[i][j].pf = 0;
 
             }
         }
@@ -200,7 +198,6 @@ public class Memory {
         for (int i = 0; i < this.width; i++) {
             for (int j = 0; j < this.height; j++) {
                 Block b = this.blocks[i][j];
-                b.updatepf(this.lambda, this.sigma, this.rho, this.mu);
                 if (b.used == false) {
                     newHeap.add(this.blocks[i][j]);
                 }
@@ -212,24 +209,6 @@ public class Memory {
         this.mem_util = ((double) (this.usedBlocks.size())) * 100 / (this.width * this.height);
 
     }
-
-    void updateParams(int lambda, int sigma, int rho, int mu) {
-        assert (lambda <= MAX_PARAM) && (lambda >= MIN_PARAM);
-        assert (sigma <= MAX_PARAM) && (sigma >= MIN_PARAM);
-        assert (rho <= MAX_PARAM) && (rho >= MIN_PARAM);
-        assert (mu <= MAX_PARAM) && (mu >= MIN_PARAM);
-
-        this.lambda = lambda;
-        this.sigma = sigma;
-        this.rho = rho;
-        this.mu = mu;
-
-    }
-
-    // Give block with maximum priority score
-//    Block giveMaxPriority(){
-//
-//    }
 
     // Memory Usage percentage
     double memUsage() {
