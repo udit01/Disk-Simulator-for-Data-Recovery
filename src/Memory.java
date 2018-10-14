@@ -41,9 +41,9 @@ public class Memory {
 
         this.mem_util = 0.0;
 
-        this.lambda = 0;
+        this.lambda = 1;
         this.sigma = 1;
-        this.rho = 0;
+        this.rho = 1;
         this.mu = 1;
 
         for (int i = 0; i < w; i++) {
@@ -150,7 +150,7 @@ public class Memory {
                         count++;
                     }
                 }
-                this.blocks[i][j].setSF((int) (sum / count));
+                this.blocks[j][i].setSF((int) (sum / count));
 
             }
         }
